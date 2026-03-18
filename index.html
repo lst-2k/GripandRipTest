@@ -18,6 +18,20 @@
         }
 
         .container { max-width: 1000px; margin: auto; }
+		
+		/* Logo Styling */
+		.logo-container {
+			max-width: 1000px;
+			margin: 0 auto 20px auto; /* Centered with 20px gap before venue */
+		}
+
+		.logo-container img {
+			width: 100%;
+			height: auto;
+			display: block;
+			border-radius: 16px; /* Matching your card curves */
+			box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Subtle depth */
+		}
 
         /* Header */
         .header-card { 
@@ -84,6 +98,10 @@
 
 <div class="container">
     <div id="hof-trigger" style="display:none;"><button class="hof-btn" onclick="openHof()">🏆 HALL OF FAME</button></div>
+	
+	<div class="logo-container">
+        <img src="logo.png" alt="League Logo">
+    </div>
     
     <div id="header" class="header-card">
         <h1 id="v-name" style="margin:0;">Tournament</h1>
