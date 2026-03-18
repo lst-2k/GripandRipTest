@@ -73,13 +73,25 @@
         .hist-content.active { display: block; }
         
         /* Floating Button */
-        #backToTop {
-            position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px;
-            background: var(--secondary); color: white; border: none; border-radius: 50%;
-            cursor: pointer; display: none; font-size: 20px; z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4); transition: 0.3s;
-        }
-        #backToTop:hover { transform: translateY(-5px); background: #059669; }
+		#backToTop {
+			position: fixed; 
+			bottom: 40px; /* Moved up slightly */
+			right: 25px; 
+			width: 50px; 
+			height: 50px;
+			background: var(--secondary); 
+			color: white; 
+			border: none; 
+			border-radius: 50%;
+			cursor: pointer; 
+			display: none; 
+			font-size: 20px; 
+			z-index: 1000;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+			transition: 0.3s;
+			/* This ensures it respects the iPhone notch/home bar area */
+			margin-bottom: env(safe-area-inset-bottom);
+		}
 
         .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.98); z-index: 2000; overflow-y: auto; padding: 20px; }
     </style>
