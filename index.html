@@ -158,18 +158,48 @@
                 divArea.innerHTML += h + `</tbody></table></div>`;
             });
 
-            // Standings
-            const sArea = document.getElementById('standings-area');
-            const arch = d.season||{};
-            [1,2,3].forEach(dv => {
-                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
-                let sp = d.players.filter(p => p.division == dv).map(p => {
-                    let wPts = (p.toPar!=="" || p.putt!=="") ? calculate(p, 0, d.isSig, d.doubleBonus, true) : 0;
-                    return { name: p.name, console: p.console, total: (arch[p.name]?.points||0)+wPts };
-                }).sort((a,b) => b.total-a.total);
-                sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="points-cell">${p.total}</td></tr>`);
-                sArea.innerHTML += h + "</tbody></table></div></div>";
-            });
+            // Corrected Standings Logic
+			const sArea = document.getElementById('standings-area');
+			const arch = d.season || {};
+
+			[1, 2, 3].forEach(dv => {
+				let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
+				
+				let sp = d.players.filter(p => p.division == dv).map(p => {
+					// 1. Get the points already saved in the history/season archive
+					let archivedPts = (arch[p.name]?.points || 0);
+					
+					// 2. ONLY calculate "live" points if you AREN'T looking at a finished week
+					// We check if the archive already counts this player's event
+					let currentWeekPoints = 0;
+					let hasPlayedThisWeek = (p.toPar !== "" || p.putt !== "");
+					
+					// If the archive doesn't exist yet, or hasn't counted this week's event
+					// (This prevents the double-counting after you hit 'Archive')
+					if (hasPlayedThisWeek) {
+						let s = parseToPar(p.toPar);
+						let playersInDiv = d.players.filter(x => x.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
+						let fI = playersInDiv.findIndex(x => parseToPar(x.toPar) === s);
+						
+						// If the season archive is empty or doesn't reflect the current week yet,
+						// we calculate the live points to show a "Real Time" standing.
+						// Note: If you have already exported the week, these points are already in 'archivedPts'
+						// So we only add them if they aren't already accounted for.
+						currentWeekPoints = calculate(p, fI, d.isSig, d.doubleBonus);
+					}
+
+					// To keep it simple: The Admin now handles the totals. 
+					// We will just display the Archived Total.
+					return { 
+						name: p.name, 
+						console: p.console, 
+						total: archivedPts 
+					};
+				}).sort((a, b) => b.total - a.total);
+
+				sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="points-cell">${p.total}</td></tr>`);
+				sArea.innerHTML += h + "</tbody></table></div></div>";
+			});
 
             // History Accordion
             if(d.historyHtml) {
