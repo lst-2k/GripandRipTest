@@ -9,7 +9,7 @@
         :root { 
             --primary: #1e293b; --secondary: #10b981; --accent: #fbbf24; 
             --bg: #0f172a; --card-bg: #ffffff; --text-main: #1e293b;
-            --red: #ef4444; --green: #10b981;
+            --red: #ef4444; --green: #10b981; --slate-light: #475569;
         }
         
         body { 
@@ -19,7 +19,7 @@
 
         .container { max-width: 1000px; margin: auto; }
 
-        /* Header Card */
+        /* Header */
         .header-card { 
             background: var(--card-bg); padding: 30px; border-radius: 16px; 
             margin-bottom: 30px; text-align: center; color: var(--primary);
@@ -27,12 +27,12 @@
         }
 
         #hof-trigger { position: absolute; top: 15px; left: 15px; }
-        .hof-btn { background: rgba(16, 185, 129, 0.1); color: var(--secondary); border: 1px solid var(--secondary); padding: 5px 10px; border-radius: 6px; font-size: 10px; cursor: pointer; }
+        .hof-btn { background: rgba(16, 185, 129, 0.1); color: var(--secondary); border: 1px solid var(--secondary); padding: 5px 10px; border-radius: 6px; font-size: 10px; cursor: pointer; font-weight: bold; }
 
         h2 { color: white; font-size: 1.2rem; margin: 30px 0 15px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px;}
         h3 { color: var(--secondary); text-align: left; margin: 0 0 10px 0; font-size: 1.1rem; }
 
-        /* Table Scrollers */
+        /* Tables & Scrolling */
         .scroll-box { 
             width: 100%; overflow-x: auto; background: white; 
             border-radius: 12px; margin-bottom: 20px; color: var(--text-main);
@@ -40,15 +40,13 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        table { width: 100%; border-collapse: collapse; min-width: 550px; }
         th { background: #f8fafc; color: #64748b; padding: 10px; font-size: 10px; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; }
-        td { padding: 10px; border-bottom: 1px solid #f1f5f9; text-align: center; font-size: 13px; font-weight: 500; }
+        td { padding: 12px 10px; border-bottom: 1px solid #f1f5f9; text-align: center; font-size: 13px; font-weight: 500; }
 
-        /* Alignment & Icons */
         .left-align { text-align: left !important; }
         .p-name-cell { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-weight: 700; }
-        .p-name-cell i { width: 18px; text-align: center; }
-
+        
         /* Scoring Colors */
         .score-red { color: var(--red) !important; font-weight: 800; }
         .score-green { color: var(--green) !important; font-weight: 800; }
@@ -57,10 +55,17 @@
         .pos-cell { width: 40px; font-weight: 800; color: #94a3b8; background: #f8fafc; border-right: 1px solid #e2e8f0; }
         .points-cell { background: #f0fdf4; color: #15803d; font-weight: 800; width: 50px; }
         
-        /* Standings */
+        /* Highlights Bar */
+        .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; }
+        .high-tag { background: white; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 11px; display: flex; align-items: center; gap: 6px; color: var(--primary); }
+        .high-tag i { color: var(--secondary); font-size: 12px; }
+        .high-tag.gold { border-color: var(--accent); background: #fffdf0; }
+        .high-tag.gold i { color: var(--accent); }
+
+        /* Standings Cards */
         .standings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
         .st-card { background: white; border-radius: 12px; overflow: hidden; }
-        .st-card h4 { background: var(--primary); color: white; margin: 0; padding: 10px; text-align: center; font-size: 11px; }
+        .st-card h4 { background: var(--slate-light); color: white; margin: 0; padding: 12px; text-align: center; font-size: 11px; letter-spacing: 1px; }
 
         /* Accordion History */
         .hist-acc { margin-bottom: 10px; border-radius: 8px; overflow: hidden; background: white; color: var(--text-main); }
@@ -69,7 +74,6 @@
             cursor: pointer; font-weight: bold; font-size: 13px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .hist-header:hover { background: #475569; }
         .hist-content { display: none; padding: 10px; background: white; }
         .hist-content.active { display: block; }
         
@@ -82,13 +86,13 @@
     <div id="hof-trigger" style="display:none;"><button class="hof-btn" onclick="openHof()">🏆 HALL OF FAME</button></div>
     
     <div id="header" class="header-card">
-        <h1 id="v-name" style="margin:0;">Loading...</h1>
-        <div style="margin-top:5px; font-weight:600; opacity:0.7;">
+        <h1 id="v-name" style="margin:0;">Tournament</h1>
+        <div style="margin-top:5px; font-weight:600; opacity:0.8;">
             <span id="v-sw">S-- W--</span> &bull; <span id="v-date">--</span>
         </div>
     </div>
 
-    <h2><i class="fa-solid fa-trophy"></i> Current Leaderboard</h2>
+    <h2><i class="fa-solid fa-trophy"></i> Weekly Leaderboard</h2>
     <div id="div-tables"></div>
 
     <h2><i class="fa-solid fa-ranking-star"></i> Season Standings</h2>
@@ -145,106 +149,72 @@
                 globalHof.forEach((e, i) => sel.innerHTML += `<button onclick="showHof(${i}, this)" style="margin:4px; padding:5px 10px;">S${e.season}</button>`);
             }
 
-            // Division Tables
+            // Division Tables + Highlights
             const divArea = document.getElementById('div-tables');
             [1,2,3].forEach(dv => {
                 const players = d.players.filter(p => p.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
                 let h = `<h3>Division ${dv}</h3><div class="scroll-box"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th>To Par</th><th>Putt</th><th>Shot</th><th>Ace</th><th>Alby</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
+                
+                let maxP = {v:0, n:''}, maxS = {v:0, n:''}, aces = [], albys = [];
+
                 players.forEach((p) => {
                     let s = parseToPar(p.toPar); let fI = players.findIndex(x => parseToPar(x.toPar) === s);
                     let pts = (p.toPar!=="" || p.putt!=="") ? calculate(p, fI, d.isSig, d.doubleBonus) : "--";
                     h += `<tr><td class="pos-cell">${s===999?"--":fI+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="${getScoreClass(p.toPar)}">${p.toPar||'--'}</td><td>${p.putt||'--'}</td><td>${p.shot||'--'}</td><td>${p.ace||'--'}</td><td>${p.alby||'--'}</td><td class="points-cell">${pts}</td></tr>`;
+                    
+                    if(parseInt(p.putt)>maxP.v){ maxP={v:parseInt(p.putt), n:p.name}; }
+                    if(parseInt(p.shot)>maxS.v){ maxS={v:parseInt(p.shot), n:p.name}; }
+                    if(p.ace && p.ace.trim()!=="") aces.push(p.name);
+                    if(p.alby && p.alby.trim()!=="") albys.push(p.name);
                 });
-                divArea.innerHTML += h + `</tbody></table></div>`;
+
+                let hBar = `<div class="highlights-bar">`;
+                if(maxP.v>0) hBar += `<div class="high-tag"><i class="fa-solid fa-hole-打"></i> <strong>Putt:</strong> ${maxP.n} (${maxP.v}ft)</div>`;
+                if(maxS.v>0) hBar += `<div class="high-tag"><i class="fa-solid fa-arrows-to-dot"></i> <strong>Shot:</strong> ${maxS.n} (${maxS.v}yds)</div>`;
+                aces.forEach(n => hBar += `<div class="high-tag gold"><i class="fa-solid fa-star"></i> <strong>ACE:</strong> ${n}</div>`);
+                albys.forEach(n => hBar += `<div class="high-tag gold"><i class="fa-solid fa-trophy"></i> <strong>ALBY:</strong> ${n}</div>`);
+                hBar += `</div>`;
+
+                divArea.innerHTML += h + `</tbody></table>${(maxP.v>0||maxS.v>0||aces.length>0) ? hBar : ""}</div>`;
             });
 
-            // Corrected Standings Logic
-			const sArea = document.getElementById('standings-area');
-			const arch = d.season || {};
+            // Standings
+            const sArea = document.getElementById('standings-area');
+            const arch = d.season||{};
+            [1,2,3].forEach(dv => {
+                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
+                let sp = d.players.filter(p => p.division == dv).map(p => ({
+                    name: p.name, console: p.console, total: (arch[p.name]?.points||0)
+                })).sort((a,b) => b.total-a.total);
+                sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="points-cell">${p.total}</td></tr>`);
+                sArea.innerHTML += h + "</tbody></table></div></div>";
+            });
 
-			[1, 2, 3].forEach(dv => {
-				let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
-				
-				let sp = d.players.filter(p => p.division == dv).map(p => {
-					// 1. Get the points already saved in the history/season archive
-					let archivedPts = (arch[p.name]?.points || 0);
-					
-					// 2. ONLY calculate "live" points if you AREN'T looking at a finished week
-					// We check if the archive already counts this player's event
-					let currentWeekPoints = 0;
-					let hasPlayedThisWeek = (p.toPar !== "" || p.putt !== "");
-					
-					// If the archive doesn't exist yet, or hasn't counted this week's event
-					// (This prevents the double-counting after you hit 'Archive')
-					if (hasPlayedThisWeek) {
-						let s = parseToPar(p.toPar);
-						let playersInDiv = d.players.filter(x => x.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
-						let fI = playersInDiv.findIndex(x => parseToPar(x.toPar) === s);
-						
-						// If the season archive is empty or doesn't reflect the current week yet,
-						// we calculate the live points to show a "Real Time" standing.
-						// Note: If you have already exported the week, these points are already in 'archivedPts'
-						// So we only add them if they aren't already accounted for.
-						currentWeekPoints = calculate(p, fI, d.isSig, d.doubleBonus);
-					}
-
-					// To keep it simple: The Admin now handles the totals. 
-					// We will just display the Archived Total.
-					return { 
-						name: p.name, 
-						console: p.console, 
-						total: archivedPts 
-					};
-				}).sort((a, b) => b.total - a.total);
-
-				sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="points-cell">${p.total}</td></tr>`);
-				sArea.innerHTML += h + "</tbody></table></div></div>";
-			});
-
-            // History Accordion
+            // History Accordion (Always starts collapsed)
             if(d.historyHtml) {
                 const histArea = document.getElementById('history-area');
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = d.historyHtml;
-                const items = tempDiv.querySelectorAll('.history-item');
-                
-                items.forEach((item, idx) => {
-                    const titleRaw = item.querySelector('strong').innerText;
-                    const cleanTitle = titleRaw.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
-                    
+                tempDiv.querySelectorAll('.history-item').forEach(item => {
+                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
                     const acc = document.createElement('div');
                     acc.className = 'hist-acc';
-                    // Open the most recent week by default
-                    const activeClass = (idx === 0) ? 'active' : '';
-                    
                     acc.innerHTML = `
                         <div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')">
-                            <span>${cleanTitle}</span>
-                            <i class="fa-solid fa-chevron-down"></i>
+                            <span>${title}</span><i class="fa-solid fa-chevron-down"></i>
                         </div>
-                        <div class="hist-content ${activeClass}">
-                            <div class="scroll-box" style="margin:0; box-shadow:none;">
-                                ${item.querySelector('table').outerHTML}
-                            </div>
-                        </div>
-                    `;
-
-                    // Polish history tables inside accordion
+                        <div class="hist-content">
+                            <div class="scroll-box" style="margin:0; box-shadow:none;">${item.querySelector('table').outerHTML.replace(/Div\s(\d)/g, "Division $1")}</div>
+                        </div>`;
                     acc.querySelectorAll('th').forEach(th => th.className = 'left-align');
                     acc.querySelectorAll('td').forEach(td => {
-                        // Apply icons to names in history
-                        const name = td.innerText;
-                        const playerObj = d.players.find(p => p.name === name);
-                        if(playerObj) {
-                            td.innerHTML = `<div class="p-name-cell">${getIcon(playerObj.console)} ${name}</div>`;
-                            td.classList.add('left-align');
+                        if(td.cellIndex === 0) { // Name lookup for icons
+                           const p = d.players.find(x => x.name === td.innerText);
+                           if(p) td.innerHTML = `<div class="p-name-cell">${getIcon(p.console)} ${p.name}</div>`;
+                           td.classList.add('left-align');
                         }
-                        // Apply colors to scores in history
-                        if(td.cellIndex === 1) { // Assuming 2nd column is score
-                           td.className = getScoreClass(td.innerText);
-                        }
+                        if(td.cellIndex === 1) td.className = getScoreClass(td.innerText); // Score Color
                     });
-
                     histArea.appendChild(acc);
                 });
             }
@@ -263,9 +233,8 @@
         const d = globalHof[i]; 
         document.getElementById('hof-display-area').innerHTML = `
             <h2 style="color:var(--primary); text-align:center;">${d.winner}</h2>
-            <p style="text-align:center; margin-top:-15px;">Season ${d.season} Champion</p>
-            <div class="scroll-box">${d.standingsHtml}</div>
-            <div class="scroll-box">${d.historyHtml}</div>`;
+            <p style="text-align:center; color:#64748b; margin-top:-10px;">Season ${d.season} Champion</p>
+            <div class="scroll-box">${d.standingsHtml}</div><div class="scroll-box">${d.historyHtml}</div>`;
     }
     function openHof() { document.getElementById('hofOverlay').style.display='block'; }
     function closeHof() { document.getElementById('hofOverlay').style.display='none'; }
