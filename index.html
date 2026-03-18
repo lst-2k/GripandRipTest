@@ -72,26 +72,24 @@
         .hist-content { display: none; padding: 10px; background: white; }
         .hist-content.active { display: block; }
         
-        /* Floating Button */
-		#backToTop {
-			position: fixed; 
-			bottom: 40px; /* Moved up slightly */
-			right: 25px; 
-			width: 50px; 
-			height: 50px;
-			background: var(--secondary); 
-			color: white; 
-			border: none; 
-			border-radius: 50%;
-			cursor: pointer; 
-			display: none; 
-			font-size: 20px; 
-			z-index: 1000;
-			box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
-			transition: 0.3s;
-			/* This ensures it respects the iPhone notch/home bar area */
-			margin-bottom: env(safe-area-inset-bottom);
-		}
+        #backToTop {
+            position: fixed; 
+            bottom: 40px; 
+            right: 25px; 
+            width: 50px; 
+            height: 50px;
+            background: var(--secondary); 
+            color: white; 
+            border: none; 
+            border-radius: 50%;
+            cursor: pointer; 
+            display: none; 
+            font-size: 20px; 
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+            transition: 0.3s;
+            margin-bottom: env(safe-area-inset-bottom);
+        }
 
         .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.98); z-index: 2000; overflow-y: auto; padding: 20px; }
     </style>
@@ -212,11 +210,16 @@
             const sArea = document.getElementById('standings-area');
             const arch = d.season||{};
             [1,2,3].forEach(dv => {
-                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
+                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th>Played</th><th>Wins</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
                 let sp = d.players.filter(p => p.division == dv).map(p => ({
-                    name: p.name, console: p.console, total: (arch[p.name]?.points||0)
+                    name: p.name, 
+                    console: p.console, 
+                    total: (arch[p.name]?.points||0),
+                    ev: (arch[p.name]?.eventsPlayed||0),
+                    wins: (arch[p.name]?.wins||0)
                 })).sort((a,b) => b.total-a.total);
-                sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="points-cell">${p.total}</td></tr>`);
+                
+                sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td>${p.ev}</td><td>${p.wins}</td><td class="points-cell">${p.total}</td></tr>`);
                 sArea.innerHTML += h + "</tbody></table></div></div>";
             });
 
@@ -225,7 +228,9 @@
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = d.historyHtml;
                 tempDiv.querySelectorAll('.history-item').forEach(item => {
-                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
+                    const titleTag = item.querySelector('strong');
+                    if (!titleTag) return;
+                    const title = titleTag.innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
                     const acc = document.createElement('div');
                     acc.className = 'hist-acc';
                     acc.innerHTML = `<div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="scroll-box" style="margin:0; box-shadow:none;">${item.querySelector('table').outerHTML.replace(/Div\s(\d)/g, "Division $1")}</div></div>`;
