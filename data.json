@@ -147,18 +147,8 @@
       "alby": ""
     },
     {
-      "name": "Hendomedes",
-      "console": "Xbox",
-      "division": 3,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "Icecream",
-      "console": "PC",
+      "name": "isosaku99",
+      "console": "PS",
       "division": 3,
       "toPar": "",
       "putt": "",
@@ -177,9 +167,69 @@
       "alby": ""
     },
     {
-      "name": "isosaku77",
+      "name": "IceCream",
       "console": "PC",
       "division": 3,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Hendomedes",
+      "console": "Xbox",
+      "division": 3,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "iluvJeezus",
+      "console": "Xbox",
+      "division": 0,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Stando Cuz",
+      "console": "Xbox",
+      "division": 0,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "GovenmentAgent",
+      "console": "PC",
+      "division": 0,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "bfctino",
+      "console": "PS",
+      "division": 0,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "BotClappintonll",
+      "console": "PS",
+      "division": 0,
       "toPar": "",
       "putt": "",
       "shot": "",
@@ -189,100 +239,60 @@
   ],
   "season": {
     "Colly45x": {
-      "points": 665,
-      "eventsPlayed": 6,
-      "wins": 4
+      "points": 100,
+      "eventsPlayed": 1,
+      "wins": 1
     },
-    "Keep_of_Kalessin": {
-      "points": 540,
-      "eventsPlayed": 6,
+    "Mr Longpole": {
+      "points": 115,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "erii4ic": {
+      "points": 80,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Tenbobnote": {
+      "points": 70,
+      "eventsPlayed": 1,
       "wins": 0
     },
     "x3offthetee": {
-      "points": 640,
-      "eventsPlayed": 6,
-      "wins": 1
-    },
-    "Tenbobnote": {
-      "points": 560,
-      "eventsPlayed": 5,
-      "wins": 1
-    },
-    "Geordieboy85": {
-      "points": 540,
-      "eventsPlayed": 6,
-      "wins": 0
-    },
-    "Mr Longpole": {
-      "points": 585,
-      "eventsPlayed": 6,
-      "wins": 0
-    },
-    "iluvJeezus": {
-      "points": 450,
-      "eventsPlayed": 4,
-      "wins": 4
-    },
-    "erii4ic": {
-      "points": 710,
-      "eventsPlayed": 6,
-      "wins": 0
-    },
-    "Hoplinkz": {
-      "points": 495,
-      "eventsPlayed": 5,
+      "points": 70,
+      "eventsPlayed": 1,
       "wins": 0
     },
     "NoWorries37908": {
-      "points": 530,
-      "eventsPlayed": 6,
+      "points": 75,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Horusphoenix": {
+      "points": 125,
+      "eventsPlayed": 1,
+      "wins": 1
+    },
+    "Hoplinkz": {
+      "points": 90,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Keep_of_Kalessin": {
+      "points": 80,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Geordieboy85": {
+      "points": 95,
+      "eventsPlayed": 1,
       "wins": 0
     },
     "Polekatt": {
-      "points": 560,
-      "eventsPlayed": 6,
-      "wins": 1
-    },
-    "Wingisback": {
-      "points": 655,
-      "eventsPlayed": 5,
-      "wins": 3
-    },
-    "SimChars68": {
-      "points": 595,
-      "eventsPlayed": 5,
-      "wins": 0
-    },
-    "zdubz92": {
-      "points": 275,
-      "eventsPlayed": 3,
-      "wins": 1
-    },
-    "GovenmentAgent": {
-      "points": 180,
-      "eventsPlayed": 2,
-      "wins": 0
-    },
-    "bfctino": {
-      "points": 60,
+      "points": 125,
       "eventsPlayed": 1,
-      "wins": 0
-    },
-    "BotClappintonll": {
-      "points": 50,
-      "eventsPlayed": 1,
-      "wins": 0
-    },
-    "Stando Cuz": {
-      "points": 180,
-      "eventsPlayed": 2,
       "wins": 1
-    },
-    "Horusphoenix": {
-      "points": 415,
-      "eventsPlayed": 3,
-      "wins": 2
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S5 W6: Foxwarren Manor & Mere</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-13</td><td>100</td></tr><tr><td>Mr Longpole</td><td>-5</td><td>115</td></tr><tr><td>erii4ic</td><td>-1</td><td>80</td></tr><tr><td>Tenbobnote</td><td>E</td><td>70</td></tr><tr><td>x3offthetee</td><td>E</td><td>70</td></tr><tr><td>NoWorries37908</td><td>+16</td><td>75</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Horusphoenix</td><td>-16</td><td>125</td></tr><tr><td>Hoplinkz</td><td>-6</td><td>90</td></tr><tr><td>Keep_of_Kalessin</td><td>-2</td><td>80</td></tr><tr><td>Geordieboy85</td><td>+5</td><td>95</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Polekatt</td><td>+13</td><td>125</td></tr></table></div><div class=\"history-item\"><strong>S5 W5: Frag Hill Rock</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Tenbobnote</td><td>-6</td><td>200</td></tr><tr><td>Mr Longpole</td><td>-4</td><td>180</td></tr><tr><td>Colly45x</td><td>-1</td><td>160</td></tr><tr><td>Geordieboy85</td><td>+4</td><td>140</td></tr><tr><td>x3offthetee</td><td>+4</td><td>240</td></tr><tr><td>Keep_of_Kalessin</td><td>+6</td><td>100</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Horusphoenix</td><td>-4</td><td>200</td></tr><tr><td>erii4ic</td><td>E</td><td>230</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>160</td></tr><tr><td>NoWorries37908</td><td>+21</td><td>140</td></tr><tr><td>Polekatt</td><td>+25</td><td>170</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Wingisback</td><td>-7</td><td>200</td></tr><tr><td>SimChars68</td><td>+18</td><td>230</td></tr></table></div><div class=\"history-item\"><strong>S5 W4: Commonwealth Yacht & Sail</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-14</td><td>125</td></tr><tr><td>Keep_of_Kalessin</td><td>-13</td><td>115</td></tr><tr><td>Tenbobnote</td><td>-10</td><td>80</td></tr><tr><td>Geordieboy85</td><td>-7</td><td>70</td></tr><tr><td>Mr Longpole</td><td>-7</td><td>70</td></tr><tr><td>x3offthetee</td><td>-1</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>iluvJeezus</td><td>-21</td><td>100</td></tr><tr><td>Horusphoenix</td><td>-8</td><td>90</td></tr><tr><td>erii4ic</td><td>-3</td><td>105</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>95</td></tr><tr><td>NoWorries37908</td><td>+10</td><td>60</td></tr><tr><td>Polekatt</td><td>+17</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>zdubz92</td><td>-5</td><td>125</td></tr><tr><td>Wingisback</td><td>-2</td><td>115</td></tr><tr><td>SimChars68</td><td>+4</td><td>80</td></tr></table></div><div class=\"history-item\"><strong>S5 W3: Wheatland Prairie Club</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-7</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-4</td><td>115</td></tr><tr><td>Tenbobnote</td><td>-4</td><td>115</td></tr><tr><td>Mr Longpole</td><td>-1</td><td>70</td></tr><tr><td>Keep_of_Kalessin</td><td>+2</td><td>60</td></tr><tr><td>x3offthetee</td><td>+5</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>iluvJeezus</td><td>-9</td><td>125</td></tr><tr><td>erii4ic</td><td>-2</td><td>90</td></tr><tr><td>NoWorries37908</td><td>+16</td><td>80</td></tr><tr><td>Polekatt</td><td>+21</td><td>70</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Stando Cuz</td><td>-10</td><td>100</td></tr><tr><td>Wingisback</td><td>-5</td><td>115</td></tr><tr><td>SimChars68</td><td>+6</td><td>105</td></tr></table></div><div class=\"history-item\"><strong>S5 W2: Dunglass</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>x3offthetee</td><td>-11</td><td>125</td></tr><tr><td>Mr Longpole</td><td>-7</td><td>90</td></tr><tr><td>Colly45x</td><td>-5</td><td>80</td></tr><tr><td>Keep_of_Kalessin</td><td>-4</td><td>95</td></tr><tr><td>Geordieboy85</td><td>-1</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>iluvJeezus</td><td>-17</td><td>100</td></tr><tr><td>erii4ic</td><td>+2</td><td>115</td></tr><tr><td>NoWorries37908</td><td>+6</td><td>80</td></tr><tr><td>Hoplinkz</td><td>+14</td><td>70</td></tr><tr><td>Polekatt</td><td>+16</td><td>85</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Wingisback</td><td>-5</td><td>100</td></tr><tr><td>SimChars68</td><td>-4</td><td>90</td></tr><tr><td>Stando Cuz</td><td>-3</td><td>80</td></tr><tr><td>zdubz92</td><td>+5</td><td>70</td></tr><tr><td>GovenmentAgent</td><td>+14</td><td>85</td></tr></table></div><div class=\"history-item\"><strong>S5 W1: Rockanje</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-8</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+3</td><td>60</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>iluvJeezus</td><td>-10</td><td>125</td></tr><tr><td>erii4ic</td><td>-1</td><td>90</td></tr><tr><td>Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>NoWorries37908</td><td>+4</td><td>95</td></tr><tr><td>Polekatt</td><td>+19</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Wingisback</td><td>-12</td><td>125</td></tr><tr><td>SimChars68</td><td>+6</td><td>90</td></tr><tr><td>zdubz92</td><td>+7</td><td>80</td></tr><tr><td>GovenmentAgent</td><td>+17</td><td>95</td></tr><tr><td>bfctino</td><td>+22</td><td>60</td></tr><tr><td>BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>"
+  "historyHtml": "<div class=\"history-item\"><strong>S5 W6: Foxwarren Manor & Mere</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-13</td><td>100</td></tr><tr><td>Mr Longpole</td><td>-5</td><td>115</td></tr><tr><td>erii4ic</td><td>-1</td><td>80</td></tr><tr><td>Tenbobnote</td><td>E</td><td>70</td></tr><tr><td>x3offthetee</td><td>E</td><td>70</td></tr><tr><td>NoWorries37908</td><td>+16</td><td>75</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Horusphoenix</td><td>-16</td><td>125</td></tr><tr><td>Hoplinkz</td><td>-6</td><td>90</td></tr><tr><td>Keep_of_Kalessin</td><td>-2</td><td>80</td></tr><tr><td>Geordieboy85</td><td>+5</td><td>95</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Polekatt</td><td>+13</td><td>125</td></tr></table></div>"
 }
