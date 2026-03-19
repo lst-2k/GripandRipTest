@@ -223,31 +223,56 @@
                 sArea.innerHTML += h + "</tbody></table></div></div>";
             });
 
-            if(d.historyHtml) {
+			if(d.historyHtml) {
                 const histArea = document.getElementById('history-area');
+                histArea.innerHTML = ""; // Clear existing to prevent duplicates
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = d.historyHtml;
+
                 tempDiv.querySelectorAll('.history-item').forEach(item => {
                     const titleTag = item.querySelector('strong');
                     if (!titleTag) return;
+
                     const title = titleTag.innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
                     const acc = document.createElement('div');
                     acc.className = 'hist-acc';
-                    acc.innerHTML = `<div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="scroll-box" style="margin:0; box-shadow:none;">${item.querySelector('table').outerHTML.replace(/Div\s(\d)/g, "Division $1")}</div></div>`;
-                    acc.querySelectorAll('th').forEach(th => th.className = 'left-align');
+                    
+                    // Re-processing the archived table
+                    const table = item.querySelector('table');
+                    
+                    // Add specific headers: Player, Total (Score), Points
+                    table.innerHTML = `<thead><tr>
+                        <th class="left-align" style="width: 1%; white-space: nowrap;">Player</th>
+                        <th>Total</th>
+                        <th>Points</th>
+                    </tr></thead>` + table.innerHTML;
+
+                    acc.innerHTML = `
+                        <div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                            <span>${title}</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="hist-content">
+                            <div class="scroll-box" style="margin:0; box-shadow:none;">
+                                ${table.outerHTML.replace(/Div\s(\d)/g, "Division $1")}
+                            </div>
+                        </div>`;
+
+                    // Style cells and inject icons
                     acc.querySelectorAll('td').forEach(td => {
-                        if(td.cellIndex === 0) {
+                        if(td.cellIndex === 0) { // Player Name Column
                            const p = d.players.find(x => x.name === td.innerText);
+                           // width: 1% + white-space: nowrap forces the cell to shrink to the longest name
+                           td.style = "width: 1%; white-space: nowrap;"; 
                            if(p) td.innerHTML = `<div class="p-name-cell">${getIcon(p.console)} ${p.name}</div>`;
                            td.classList.add('left-align');
                         }
-                        if(td.cellIndex === 1) td.className = getScoreClass(td.innerText);
+                        if(td.cellIndex === 1) td.className = getScoreClass(td.innerText); // Total/Score Column
                     });
+
                     histArea.appendChild(acc);
                 });
             }
-        } catch(e) { console.log(e); }
-    }
 
     function calculate(p, idx, isM, isDB) {
         let base = {0:100, 1:90, 2:80, 3:70, 4:60, 5:50}[idx] || 0;
