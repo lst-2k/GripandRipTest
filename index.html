@@ -124,8 +124,7 @@
                         let cells = tr.querySelectorAll('td, th');
                         if(tr.innerText.includes("Division")) newTable += `<tr style="background:#f1f5f9;"><td colspan="3" style="text-align:left; font-size:11px; font-weight:bold; color:#475569;">${tr.innerText.toUpperCase()}</td></tr>`;
                         else if(cells.length === 3) {
-                            let p = d.players.find(x => x.name === cells[0].innerText);
-                            newTable += `<tr><td class="left-align" style="width:1%; white-space:nowrap;"><div class="p-name-cell">${p?getIcon(p.console):''} ${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td style="font-weight:bold;">${cells[2].innerText}</td></tr>`;
+                        newTable += `<tr><td class="left-align" style="width:1%; white-space:nowrap;"><div class="p-name-cell">${p?getIcon(p.console):''} ${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td style="font-weight:bold;">${cells[2].innerText}</td></tr>`;
                         }
                     });
                     document.getElementById('history-area').innerHTML += `<div class="hist-acc"><div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="scroll-box" style="margin:0; box-shadow:none;"><table style="width:auto; min-width:0; margin-right:auto;">${newTable}</tbody></table></div></div></div>`;
