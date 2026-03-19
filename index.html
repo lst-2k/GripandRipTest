@@ -3,145 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Golf League Hub</title>
+    <title>PGL League Standings</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { 
-            --primary: #1e293b; --secondary: #10b981; --accent: #fbbf24; 
-            --bg: #0f172a; --card-bg: #ffffff; --text-main: #1e293b;
-            --red: #ef4444; --green: #10b981; --slate-light: #475569;
-        }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); margin: 0; padding: 15px; color: white; min-height: 100vh; scroll-behavior: smooth; }
-        .container { max-width: 1000px; margin: auto; }
-        .logo-container { max-width: 1000px; margin: 0 auto 20px auto; }
-        .logo-container img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-        .header-card { background: var(--card-bg); padding: 30px; border-radius: 16px; margin-bottom: 30px; text-align: center; color: var(--primary); border-bottom: 4px solid var(--secondary); position: relative; transition: all 0.4s ease; }
-        .header-card.is-major { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); color: white; border-bottom: 4px solid var(--accent); }
-        .badge-area { display: flex; justify-content: center; gap: 10px; margin-bottom: 12px; }
-        .event-badge { padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; display: none; }
-        .is-major .major-tag { display: inline-block; background: var(--accent); color: #000; }
-        .has-db .db-tag { display: inline-block; background: var(--secondary); color: #fff; }
-        #hof-trigger { position: absolute; top: 15px; left: 15px; }
-        .hof-btn { background: rgba(16, 185, 129, 0.1); color: var(--secondary); border: 1px solid var(--secondary); padding: 5px 10px; border-radius: 6px; font-size: 10px; cursor: pointer; font-weight: bold; }
-        h2 { color: white; font-size: 1.2rem; margin: 30px 0 15px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px;}
-        h3 { color: var(--secondary); text-align: left; margin: 0 0 10px 0; font-size: 1.1rem; }
-        .scroll-box { width: 100%; overflow-x: auto; background: white; border-radius: 12px; margin-bottom: 20px; color: var(--text-main); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        table { width: 100%; border-collapse: collapse; min-width: 550px; }
-        th { background: #f8fafc; color: #64748b; padding: 10px; font-size: 10px; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; }
-        td { padding: 12px 10px; border-bottom: 1px solid #f1f5f9; text-align: center; font-size: 13px; font-weight: 500; }
-        .left-align { text-align: left !important; }
-        .p-name-cell { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-weight: 700; }
-        .score-red { color: var(--red) !important; font-weight: 800; }
-        .score-green { color: var(--green) !important; font-weight: 800; }
-        .score-black { color: var(--primary) !important; font-weight: 800; }
-        .pos-cell { width: 40px; font-weight: 800; color: #94a3b8; background: #f8fafc; border-right: 1px solid #e2e8f0; }
-        .points-cell { background: #f0fdf4; color: #15803d; font-weight: 800; width: 50px; }
-        .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; }
-        .high-tag { background: white; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 11px; display: flex; align-items: center; gap: 6px; color: var(--primary); }
-        .high-tag.gold { border-color: var(--accent); background: #fffdf0; }
-        .standings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .st-card { background: white; border-radius: 12px; overflow: hidden; }
-        .st-card h4 { background: var(--slate-light); color: white; margin: 0; padding: 12px; text-align: center; font-size: 11px; letter-spacing: 1px; }
-        .hist-acc { margin-bottom: 10px; border-radius: 8px; overflow: hidden; background: white; color: var(--text-main); }
-        .hist-header { background: #334155; color: white; padding: 12px 15px; cursor: pointer; font-weight: bold; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
-        .hist-content { display: none; padding: 10px; background: white; }
+        :root { --primary: #1e293b; --secondary: #10b981; --accent: #3b82f6; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; color: var(--primary); padding-bottom: 50px; }
+        
+        /* Header & Branding */
+        .hero { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--secondary); }
+        .hero h1 { margin: 0; font-size: 28px; letter-spacing: -1px; }
+        .venue-tag { display: inline-block; background: rgba(16, 185, 129, 0.2); color: var(--secondary); padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-top: 10px; border: 1px solid var(--secondary); }
+
+        .container { max-width: 1000px; margin: -30px auto 0; padding: 0 15px; }
+
+        /* Division Cards */
+        .div-card { background: white; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 25px; overflow: hidden; border: 1px solid #e2e8f0; }
+        .div-header { background: #f1f5f9; padding: 15px 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #475569; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; font-size: 11px; color: #94a3b8; text-transform: uppercase; padding: 12px 20px; background: #fafafa; }
+        td { padding: 12px 20px; border-bottom: 1px solid #f1f5f9; font-weight: 500; }
+        .left-align { text-align: left; }
+        .p-name-cell { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+
+        /* Highlights Bar (New) */
+        .highlights-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 20px; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+        .high-tag { background: white; padding: 5px 12px; border-radius: 6px; font-size: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .high-tag.gold { background: #fffbeb; border-color: #fde68a; color: #92400e; font-weight: bold; }
+
+        /* Score Colors */
+        .score-e { color: #94a3b8; }
+        .score-minus { color: #ef4444; font-weight: 800; }
+        .score-plus { color: #1e293b; }
+
+        /* History Accordions */
+        .hist-acc { background: white; border-radius: 8px; margin-bottom: 10px; border: 1px solid #e2e8f0; overflow: hidden; }
+        .hist-header { padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: bold; background: white; transition: 0.2s; }
+        .hist-header:hover { background: #f8fafc; }
+        .hist-content { display: none; padding: 0; border-top: 1px solid #eee; }
         .hist-content.active { display: block; }
-		#backToTop { position: fixed; bottom: 40px; right: 25px; width: 50px; height: 50px; background: var(--secondary); color: white; border: none; border-radius: 50%; cursor: pointer; display: none; font-size: 20px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.4); transition: 0.3s; margin-bottom: env(safe-area-inset-bottom); }
     </style>
 </head>
 <body>
 
-<button id="backToTop" onclick="window.scrollTo(0,0)"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="hero">
+    <h1 id="league-title">PGL LEAGUE STANDINGS</h1>
+    <div id="venue-display" class="venue-tag">Loading current week...</div>
+</div>
 
 <div class="container">
-    <div id="hof-trigger" style="display:none;"><button class="hof-btn" onclick="openHof()">🏆 HALL OF FAME</button></div>
-    <div class="logo-container"><img src="logo.png" alt="League Logo"></div>
-    <div id="header" class="header-card">
-        <div class="badge-area"><span class="event-badge major-tag">🏆 Major Event</span><span class="event-badge db-tag">🔥 2X Side Pots</span></div>
-        <h1 id="v-name" style="margin:0;">Tournament</h1>
-        <div style="margin-top:5px; font-weight:600; opacity:0.8;"><span id="v-sw">S-- W--</span> &bull; <span id="v-date">--</span></div>
-    </div>
-    <h2><i class="fa-solid fa-trophy"></i> Leaderboard</h2>
-    <div id="div-tables"></div>
-    <h2><i class="fa-solid fa-ranking-star"></i> Standings</h2>
-    <div class="standings-grid" id="standings-area"></div>
-    <h2><i class="fa-solid fa-clock-rotate-left"></i> History</h2>
+    <div id="division-area"></div>
+    
+    <h2 style="margin-top: 40px; font-size: 20px;">Weekly Archive</h2>
     <div id="history-area"></div>
 </div>
 
 <script>
-    let globalHof = [];
-    window.onscroll = () => { document.getElementById("backToTop").style.display = (window.scrollY > 300) ? "block" : "none"; };
-    function getIcon(v) { 
-        let c = v==="PS"?"#003791":v==="Xbox"?"#107C10":"#171a21";
-        let i = v==="PS"?"playstation":v==="Xbox"?"xbox":"steam";
-        return `<i class="fa-brands fa-${i}" style="color:${c};"></i>`; 
+    function getIcon(val) {
+        if (val === "PS") return `<i class="fa-brands fa-playstation" style="color:#003791;"></i>`;
+        if (val === "Xbox") return `<i class="fa-brands fa-xbox" style="color:#107C10;"></i>`;
+        return `<i class="fa-brands fa-steam" style="color:#171a21;"></i>`;
     }
-    function parseToPar(v) { if(!v||v==="") return 999; let c = v.toString().toUpperCase(); return (c==='E'||c==='0')?0:parseInt(v); }
-    function getScoreClass(v) { let n = parseToPar(v); if(n===999) return ""; return n<0?"score-red":(n===0?"score-green":"score-black"); }
+
+    function getScoreClass(val) {
+        if (!val || val == "0" || val.toUpperCase() == "E") return "score-e";
+        if (val.includes("-")) return "score-minus";
+        return "score-plus";
+    }
 
     async function loadData() {
         try {
-            const res = await fetch('data.json'); const d = await res.json();
-            document.getElementById('v-name').innerText = d.venue;
-            if(d.isSig) document.getElementById('header').classList.add('is-major');
-            if(d.doubleBonus) document.getElementById('header').classList.add('has-db');
-            document.getElementById('v-sw').innerText = `Season ${d.seasonNum} Week ${d.weekNum}`;
-            document.getElementById('v-date').innerText = d.date;
+            const response = await fetch('data.json?t=' + Date.now());
+            const d = await response.json();
 
-            [1,2,3].forEach(dv => {
-                const players = d.players.filter(p => p.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
-                let h = `<h3>Division ${dv}</h3><div class="scroll-box"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th>To Par</th><th>Putt</th><th>Shot</th><th>Ace</th><th>Alby</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
-                let maxP={v:0,n:''}, maxS={v:0,n:''}, aces=[], albys=[];
-                players.forEach(p => {
-                    let s = parseToPar(p.toPar); let fI = players.findIndex(x => parseToPar(x.toPar) === s);
-                    let pts = (p.toPar!=="" || p.putt!=="") ? calculate(p, fI, d.isSig, d.doubleBonus) : "--";
-                    h += `<tr><td class="pos-cell">${s===999?"--":fI+1}</td><td style="width:1%; white-space:nowrap;"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="${getScoreClass(p.toPar)}">${p.toPar||'--'}</td><td>${p.putt||'--'}</td><td>${p.shot||'--'}</td><td>${p.ace||'--'}</td><td>${p.alby||'--'}</td><td class="points-cell">${pts}</td></tr>`;
-                    if(parseInt(p.putt)>maxP.v) maxP={v:parseInt(p.putt), n:p.name};
-                    if(parseInt(p.shot)>maxS.v) maxS={v:parseInt(p.shot), n:p.name};
-                    if(p.ace) aces.push(p.name); if(p.alby) albys.push(p.name);
+            // Set Title & Venue
+            document.getElementById('venue-display').innerHTML = `S${d.seasonNum} W${d.weekNum} &bull; ${d.venue} &bull; ${d.date}`;
+
+            const divArea = document.getElementById('division-area');
+            divArea.innerHTML = "";
+
+            // Loop Divisions
+            [1, 2, 3].forEach(divNum => {
+                let maxP = { n: "", v: 0 };
+                let maxS = { n: "", v: 0 };
+                let aces = [];
+                let albys = [];
+
+                let h = `<div class="div-card">
+                    <div class="div-header">Division ${divNum}</div>
+                    <table>
+                        <thead><tr><th class="left-align">Player</th><th style="text-align:center;">To Par</th><th style="text-align:center;">Points</th></tr></thead>
+                        <tbody>`;
+
+                const players = d.players.filter(p => p.division == divNum);
+                
+                // Sort by To Par for display
+                players.sort((a,b) => {
+                    const parse = (v) => { if(!v || v=="" || v.toUpperCase()=="E") return 0; return parseInt(v); };
+                    return parse(a.toPar) - parse(b.toPar);
                 });
-                document.getElementById('div-tables').innerHTML += h + `</tbody></table></div>`;
+
+                players.forEach(p => {
+                    if (p.toPar === "" && p.putt === "") return;
+
+                    h += `<tr>
+                        <td class="left-align">
+                            <div class="p-name-cell">${getIcon(p.console)} ${p.name}</div>
+                        </td>
+                        <td style="text-align:center;" class="${getScoreClass(p.toPar)}">${p.toPar || 'E'}</td>
+                        <td style="text-align:center; font-weight:bold; color:var(--secondary);">${p.points || 0}</td>
+                    </tr>`;
+
+                    // Track Highlights
+                    let pVal = parseFloat(p.putt) || 0;
+                    let sVal = parseFloat(p.shot) || 0;
+                    if (pVal > maxP.v) { maxP.v = pVal; maxP.n = p.name; }
+                    if (sVal > maxS.v) { maxS.v = sVal; maxS.n = p.name; }
+                    if (p.ace && p.ace.trim() !== "") aces.push(p.name);
+                    if (p.alby && p.alby.trim() !== "") albys.push(p.name);
+                });
+
+                h += `</tbody></table>`;
+
+                // Highlights Bar
+                let hBar = `<div class="highlights-bar">`;
+                if(maxP.v > 0) hBar += `<div class="high-tag"><span>🎯</span> <strong>Longest Putt:</strong> ${maxP.n} (${maxP.v}ft)</div>`;
+                if(maxS.v > 0) hBar += `<div class="high-tag"><span>🏌🏻</span> <strong>Longest Shot:</strong> ${maxS.n} (${maxS.v}yds)</div>`;
+                aces.forEach(n => hBar += `<div class="high-tag gold"><span>⛳</span> <strong>ACE:</strong> ${n}</div>`);
+                albys.forEach(n => hBar += `<div class="high-tag gold"><span>🦅</span> <strong>ALBATROSS:</strong> ${n}</div>`);
+                hBar += `</div>`;
+
+                divArea.innerHTML += h + ( (maxP.v > 0 || maxS.v > 0 || aces.length > 0 || albys.length > 0) ? hBar : "" ) + `</div>`;
             });
 
-            const arch = d.season||{};
-            [1,2,3].forEach(dv => {
-                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box" style="margin:0; box-shadow:none;"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th>P</th><th>W</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
-                let sp = d.players.filter(p => p.division == dv).map(p => ({
-                    name:p.name, console:p.console, total:arch[p.name]?.points||0, ev:arch[p.name]?.eventsPlayed||0, wins:arch[p.name]?.wins||0
-                })).sort((a,b) => b.total-a.total);
-                sp.forEach((p, i) => h += `<tr><td class="pos-cell">${i+1}</td><td style="width:1%; white-space:nowrap;"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td>${p.ev}</td><td>${p.wins}</td><td class="points-cell">${p.total}</td></tr>`);
-                document.getElementById('standings-area').innerHTML += h + "</tbody></table></div></div>";
-            });
+            // History Section
+            if (d.historyHtml) {
+                const histArea = document.getElementById('history-area');
+                const temp = document.createElement('div');
+                temp.innerHTML = d.historyHtml;
 
-            if(d.historyHtml) {
-                const tempDiv = document.createElement('div'); tempDiv.innerHTML = d.historyHtml;
-                tempDiv.querySelectorAll('.history-item').forEach(item => {
-                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
-                    let table = item.querySelector('table');
-                    let newTable = `<thead><tr><th class="left-align" style="width:1%; white-space:nowrap;">Player</th><th style="width:50px;">Total</th><th style="width:50px;">Points</th></tr></thead><tbody>`;
-                    table.querySelectorAll('tr').forEach(tr => {
+                temp.querySelectorAll('.history-item').forEach(item => {
+                    const title = item.querySelector('strong').innerText;
+                    const acc = document.createElement('div');
+                    acc.className = 'hist-acc';
+                    
+                    // Rebuild history table without icons and with tight columns
+                    let originalTable = item.querySelector('table');
+                    let newTable = `<table style="width: auto; margin-right: auto;"><tbody>`;
+                    
+                    originalTable.querySelectorAll('tr').forEach(tr => {
                         let cells = tr.querySelectorAll('td, th');
-                        if(tr.innerText.includes("Division")) newTable += `<tr style="background:#f1f5f9;"><td colspan="3" style="text-align:left; font-size:11px; font-weight:bold; color:#475569;">${tr.innerText.toUpperCase()}</td></tr>`;
-                        else if(cells.length === 3) {
-                            let p = d.players.find(x => x.name === cells[0].innerText);
-                            newTable += `<tr><td class="left-align" style="width:1%; white-space:nowrap;"><div class="p-name-cell">${p?getIcon(p.console):''} ${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td style="font-weight:bold;">${cells[2].innerText}</td></tr>`;
+                        if (tr.innerText.includes("Division")) {
+                            newTable += `<tr style="background:#f8fafc;"><td colspan="3" style="font-size:11px; font-weight:bold; color:#64748b; padding:8px 20px;">${tr.innerText.toUpperCase()}</td></tr>`;
+                        } else if (cells.length === 3) {
+                            newTable += `<tr>
+                                <td style="padding-right:40px;">${cells[0].innerText}</td>
+                                <td style="width:60px; text-align:center;" class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td>
+                                <td style="width:60px; text-align:center; font-weight:bold;">${cells[2].innerText}</td>
+                            </tr>`;
                         }
                     });
-                    document.getElementById('history-area').innerHTML += `<div class="hist-acc"><div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="scroll-box" style="margin:0; box-shadow:none;"><table style="width:auto; min-width:0; margin-right:auto;">${newTable}</tbody></table></div></div></div>`;
+                    newTable += `</tbody></table>`;
+
+                    acc.innerHTML = `
+                        <div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                            <span>${title}</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="hist-content">${newTable}</div>`;
+                    histArea.appendChild(acc);
                 });
             }
-        } catch(e) { console.log(e); }
+
+        } catch (e) { console.error("Error loading data:", e); }
     }
 
-    function calculate(p, idx, isM, isDB) {
-        let base = {0:100, 1:90, 2:80, 3:70, 4:60, 5:50}[idx] || 0;
-        let bM = isDB ? 2 : 1; let bonus = 0;
-        if(p.putt > 0) bonus += (25*bM); if(p.shot > 0) bonus += (25*bM);
-        if(p.ace) bonus += (50*bM); if(p.alby) bonus += (50*bM);
-        return isM ? (base + bonus) * 2 : (base + bonus);
-    }
     window.onload = loadData;
 </script>
+
 </body>
 </html>
