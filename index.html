@@ -137,21 +137,21 @@
                 document.getElementById('standings-area').innerHTML += h + "</tbody></table></div></div>";
             });
 
-			// NEW SIMPLIFIED HISTORY LOADING
+			// Restored History Logic: Directly injects the Admin's pre-built accordion
 				if(d.historyHtml) {
 					const historyArea = document.getElementById('history-area');
 					
-					// 1. Clear the area and drop in the pre-built accordion from Admin
+					// 1. Inject the HTML exported from Admin
 					historyArea.innerHTML = d.historyHtml;
 
-					// 2. Loop through the rows to add the console icons automatically
+					// 2. Loop through rows to add player console icons
 					historyArea.querySelectorAll('tr').forEach(tr => {
 						let nameCell = tr.querySelector('td:first-child');
 						
-						// Only process cells that have a player name (skip headers)
+						// Skip header rows and Division labels
 						if(nameCell && !tr.innerText.includes("DIVISION") && !tr.innerText.includes("Player")) {
 							let name = nameCell.innerText.trim();
-							// Match against current roster to find the console (PS, Xbox, PC)
+							// Find player in current roster to get their console type
 							let p = d.players.find(x => x.name === name);
 							if(p) {
 								nameCell.innerHTML = `<div class="p-name-cell">${getIcon(p.console)} ${name}</div>`;
@@ -159,7 +159,7 @@
 						}
 					});
 
-					// 3. Re-attach the click listeners for the accordion
+					// 3. Ensure accordions have their click functionality
 					historyArea.querySelectorAll('.hist-header').forEach(header => {
 						header.onclick = function() {
 							this.nextElementSibling.classList.toggle('active');
