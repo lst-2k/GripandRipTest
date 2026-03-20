@@ -1,8 +1,8 @@
 {
-  "venue": "Frag Hill Rock",
-  "date": "19-25 February 2026",
+  "venue": "Foxwarren Manor & Mere",
+  "date": "26 Feb - 4 Mar 2026",
   "seasonNum": 1,
-  "weekNum": 5,
+  "weekNum": 6,
   "isSig": true,
   "doubleBonus": false,
   "players": [
@@ -10,7 +10,7 @@
       "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-1",
+      "toPar": "-13",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -19,8 +19,8 @@
     {
       "name": "Keep_of_Kalessin",
       "console": "PS",
-      "division": 1,
-      "toPar": "+6",
+      "division": 2,
+      "toPar": "-2",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -30,9 +30,9 @@
       "name": "x3offthetee",
       "console": "Xbox",
       "division": 1,
-      "toPar": "+4",
-      "putt": "20.8",
-      "shot": "11.9",
+      "toPar": "E",
+      "putt": "",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -40,7 +40,7 @@
       "name": "Tenbobnote",
       "console": "PS",
       "division": 1,
-      "toPar": "-6",
+      "toPar": "E",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -50,26 +50,26 @@
       "name": "Mr Longpole",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-4",
+      "toPar": "-5",
       "putt": "",
-      "shot": "",
+      "shot": "14.4",
       "ace": "",
       "alby": ""
     },
     {
       "name": "Geordieboy85",
       "console": "PS",
-      "division": 1,
-      "toPar": "+4",
+      "division": 2,
+      "toPar": "+5",
       "putt": "",
-      "shot": "",
+      "shot": "17.0",
       "ace": "",
       "alby": ""
     },
     {
       "name": "iluvJeezus",
       "console": "Xbox",
-      "division": 2,
+      "division": 0,
       "toPar": "",
       "putt": "",
       "shot": "",
@@ -79,9 +79,9 @@
     {
       "name": "er114ic",
       "console": "PS",
-      "division": 2,
-      "toPar": "E",
-      "putt": "26.2",
+      "division": 1,
+      "toPar": "-1",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -90,7 +90,7 @@
       "name": "Hoplinkz",
       "console": "PS",
       "division": 2,
-      "toPar": "+3",
+      "toPar": "-6",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -99,9 +99,9 @@
     {
       "name": "NoWorreis37908",
       "console": "Xbox",
-      "division": 2,
-      "toPar": "+21",
-      "putt": "",
+      "division": 1,
+      "toPar": "+16",
+      "putt": "26.5",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -109,10 +109,10 @@
     {
       "name": "Polekatt",
       "console": "PC",
-      "division": 2,
-      "toPar": "+25",
-      "putt": "",
-      "shot": "39.1",
+      "division": 3,
+      "toPar": "+13",
+      "putt": "25",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -120,8 +120,8 @@
       "name": "Horusphoenix",
       "console": "Xbox",
       "division": 2,
-      "toPar": "-4",
-      "putt": "",
+      "toPar": "-16",
+      "putt": "46.6",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -129,9 +129,9 @@
     {
       "name": "WingisBack",
       "console": "PS",
-      "division": 3,
-      "toPar": "-7",
-      "putt": "18.8",
+      "division": 2,
+      "toPar": "",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -139,8 +139,8 @@
     {
       "name": "SimChars68",
       "console": "PC",
-      "division": 3,
-      "toPar": "+18",
+      "division": 2,
+      "toPar": "",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -159,7 +159,7 @@
     {
       "name": "GovernmentAgent",
       "console": "PC",
-      "division": 3,
+      "division": 0,
       "toPar": "",
       "putt": "",
       "shot": "",
@@ -169,7 +169,7 @@
     {
       "name": "bfctino",
       "console": "PS",
-      "division": 3,
+      "division": 0,
       "toPar": "",
       "putt": "",
       "shot": "",
@@ -179,7 +179,7 @@
     {
       "name": "BotClappintonll",
       "console": "PS",
-      "division": 3,
+      "division": 0,
       "toPar": "",
       "putt": "",
       "shot": "",
@@ -188,6 +188,46 @@
     },
     {
       "name": "Stando Cuz",
+      "console": "Xbox",
+      "division": 0,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "isosaku77",
+      "console": "PS",
+      "division": 3,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Hendomedes",
+      "console": "Xbox",
+      "division": 3,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "IceCream",
+      "console": "PC",
+      "division": 3,
+      "toPar": "",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "CanuckxX89",
       "console": "Xbox",
       "division": 3,
       "toPar": "",
@@ -199,119 +239,60 @@
   ],
   "season": {
     "Colly45x": {
-      "points": 565,
-      "eventsPlayed": 5,
-      "wins": 3,
-      "isTiedCurrent": false
-    },
-    "Keep_of_Kalessin": {
-      "points": 460,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": false
-    },
-    "x3offthetee": {
-      "points": 570,
-      "eventsPlayed": 5,
-      "wins": 1,
-      "isTiedCurrent": true
-    },
-    "Tenbobnote": {
-      "points": 490,
-      "eventsPlayed": 4,
-      "wins": 1,
-      "isTiedCurrent": false
+      "points": 200,
+      "eventsPlayed": 1,
+      "wins": 1
     },
     "Mr Longpole": {
-      "points": 470,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": false
-    },
-    "Geordieboy85": {
-      "points": 445,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": true
-    },
-    "iluvJeezus": {
-      "points": 450,
-      "eventsPlayed": 4,
-      "wins": 4,
-      "isTiedCurrent": false
+      "points": 230,
+      "eventsPlayed": 1,
+      "wins": 0
     },
     "er114ic": {
-      "points": 630,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": false
+      "points": 160,
+      "eventsPlayed": 1,
+      "wins": 0
     },
-    "Hoplinkz": {
-      "points": 405,
-      "eventsPlayed": 4,
-      "wins": 0,
-      "isTiedCurrent": false
+    "x3offthetee": {
+      "points": 140,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Tenbobnote": {
+      "points": 140,
+      "eventsPlayed": 1,
+      "wins": 0
     },
     "NoWorreis37908": {
-      "points": 455,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": false
-    },
-    "Polekatt": {
-      "points": 435,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": false
-    },
-    "WingisBack": {
-      "points": 705,
-      "eventsPlayed": 5,
-      "wins": 3,
-      "isTiedCurrent": false
-    },
-    "SimChars68": {
-      "points": 570,
-      "eventsPlayed": 5,
-      "wins": 0,
-      "isTiedCurrent": false
-    },
-    "zdubz92": {
-      "points": 260,
-      "eventsPlayed": 3,
-      "wins": 1,
-      "isTiedCurrent": false
-    },
-    "GovernmentAgent": {
-      "points": 190,
-      "eventsPlayed": 2,
-      "wins": 0,
-      "isTiedCurrent": false
-    },
-    "bfctino": {
-      "points": 60,
+      "points": 150,
       "eventsPlayed": 1,
       "wins": 0
-    },
-    "BotClappintonll": {
-      "points": 50,
-      "eventsPlayed": 1,
-      "wins": 0
-    },
-    "Stando Cuz": {
-      "points": 100,
-      "eventsPlayed": 1,
-      "wins": 1,
-      "tied": false,
-      "isTiedCurrent": false
     },
     "Horusphoenix": {
-      "points": 290,
-      "eventsPlayed": 2,
-      "wins": 1,
-      "tied": false,
-      "isTiedCurrent": false
+      "points": 250,
+      "eventsPlayed": 1,
+      "wins": 1
+    },
+    "Hoplinkz": {
+      "points": 180,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Keep_of_Kalessin": {
+      "points": 160,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Geordieboy85": {
+      "points": 190,
+      "eventsPlayed": 1,
+      "wins": 0
+    },
+    "Polekatt": {
+      "points": 250,
+      "eventsPlayed": 1,
+      "wins": 1
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S1 W5: Frag Hill Rock (19-25 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Tenbobnote</td><td>-6</td><td>200</td></tr><tr><td>2. Mr Longpole</td><td>-4</td><td>180</td></tr><tr><td>3. Colly45x</td><td>-1</td><td>160</td></tr><tr><td>T4. x3offthetee</td><td>+4</td><td>240</td></tr><tr><td>T4. Geordieboy85</td><td>+4</td><td>140</td></tr><tr><td>6. Keep_of_Kalessin</td><td>+6</td><td>100</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. Horusphoenix</td><td>-4</td><td>200</td></tr><tr><td>2. er114ic</td><td>E</td><td>230</td></tr><tr><td>3. Hoplinkz</td><td>+3</td><td>160</td></tr><tr><td>4. NoWorreis37908</td><td>+21</td><td>140</td></tr><tr><td>5. Polekatt</td><td>+25</td><td>170</td></tr><tr><td>6. iluvJeezus</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-7</td><td>250</td></tr><tr><td>2. SimChars68</td><td>+18</td><td>180</td></tr><tr><td>T3. zdubz92</td><td>DNP</td><td>0</td></tr><tr><td>T3. GovernmentAgent</td><td>DNP</td><td>0</td></tr><tr><td>T3. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T3. BotClappintonll</td><td>DNP</td><td>0</td></tr><tr><td>T3. Stando Cuz</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W4: Commonwealth Yach & Sail (12-18 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-14</td><td>125</td></tr><tr><td>2. Keep_of_Kalessin</td><td>-13</td><td>115</td></tr><tr><td>3. Tenbobnote</td><td>-10</td><td>80</td></tr><tr><td>T4. Mr Longpole</td><td>-7</td><td>70</td></tr><tr><td>T4. Geordieboy85</td><td>-7</td><td>70</td></tr><tr><td>6. x3offthetee</td><td>-1</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-21</td><td>100</td></tr><tr><td>2. Horusphoenix</td><td>-8</td><td>90</td></tr><tr><td>3. er114ic</td><td>-3</td><td>105</td></tr><tr><td>4. Hoplinkz</td><td>+3</td><td>95</td></tr><tr><td>5. NoWorreis37908</td><td>+10</td><td>60</td></tr><tr><td>6. Polekatt</td><td>+17</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. zdubz92</td><td>-5</td><td>100</td></tr><tr><td>2. WingisBack</td><td>-2</td><td>115</td></tr><tr><td>3. SimChars68</td><td>+4</td><td>105</td></tr><tr><td>T4. GovernmentAgent</td><td>DNP</td><td>0</td></tr><tr><td>T4. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T4. BotClappintonll</td><td>DNP</td><td>0</td></tr><tr><td>T4. Stando Cuz</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W3: Wheatland Prairie Club (5-11 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-7</td><td>100</td></tr><tr><td>T2. Tenbobnote</td><td>-4</td><td>115</td></tr><tr><td>T2. Geordieboy85</td><td>-4</td><td>115</td></tr><tr><td>4. Mr Longpole</td><td>-1</td><td>70</td></tr><tr><td>5. Keep_of_Kalessin</td><td>+2</td><td>60</td></tr><tr><td>6. x3offthetee</td><td>+5</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-9</td><td>125</td></tr><tr><td>2. er114ic</td><td>-2</td><td>90</td></tr><tr><td>3. NoWorreis37908</td><td>+16</td><td>80</td></tr><tr><td>4. Polekatt</td><td>+21</td><td>70</td></tr><tr><td>T5. Hoplinkz</td><td>DNP</td><td>0</td></tr><tr><td>T5. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. Stando Cuz</td><td>-10</td><td>100</td></tr><tr><td>2. WingisBack</td><td>-5</td><td>115</td></tr><tr><td>3. SimChars68</td><td>+6</td><td>105</td></tr><tr><td>T4. zdubz92</td><td>DNP</td><td>0</td></tr><tr><td>T4. GovernmentAgent</td><td>DNP</td><td>0</td></tr><tr><td>T4. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T4. BotClappintonll</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W2: Dunglass (29-4 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. x3offthetee</td><td>-11</td><td>125</td></tr><tr><td>2. Mr Longpole</td><td>-7</td><td>90</td></tr><tr><td>3. Colly45x</td><td>-5</td><td>80</td></tr><tr><td>4. Keep_of_Kalessin</td><td>-4</td><td>95</td></tr><tr><td>5. Geordieboy85</td><td>-1</td><td>60</td></tr><tr><td>6. Tenbobnote</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-17</td><td>100</td></tr><tr><td>2. er114ic</td><td>+2</td><td>115</td></tr><tr><td>3. NoWorreis37908</td><td>+6</td><td>80</td></tr><tr><td>4. Hoplinkz</td><td>+14</td><td>70</td></tr><tr><td>5. Polekatt</td><td>+16</td><td>85</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-5</td><td>100</td></tr><tr><td>2. SimChars68</td><td>-4</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+5</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+14</td><td>95</td></tr><tr><td>T5. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T5. BotClappintonll</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W1: Rockanje (2026-01-22 to 2026-01-28)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-8</td><td>100</td></tr><tr><td>2. Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>3. x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>4. Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>T5. Mr Longpole</td><td>+3</td><td>60</td></tr><tr><td>T5. Geordieboy85</td><td>+3</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-10</td><td>125</td></tr><tr><td>2. er114ic</td><td>-1</td><td>90</td></tr><tr><td>3. Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>4. NoWorreis37908</td><td>+4</td><td>95</td></tr><tr><td>5. Polekatt</td><td>+19</td><td>60</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-12</td><td>125</td></tr><tr><td>2. SimChars68</td><td>+6</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+7</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+17</td><td>95</td></tr><tr><td>5. bfctino</td><td>+22</td><td>60</td></tr><tr><td>6. BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>"
+  "historyHtml": "<div class=\"history-item\"><strong>S1 W6: Foxwarren Manor & Mere (26 Feb - 4 Mar 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-13</td><td>200</td></tr><tr><td>2. Mr Longpole</td><td>-5</td><td>230</td></tr><tr><td>3. er114ic</td><td>-1</td><td>160</td></tr><tr><td>T4. x3offthetee</td><td>E</td><td>140</td></tr><tr><td>T4. Tenbobnote</td><td>E</td><td>140</td></tr><tr><td>6. NoWorreis37908</td><td>+16</td><td>150</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. Horusphoenix</td><td>-16</td><td>250</td></tr><tr><td>2. Hoplinkz</td><td>-6</td><td>180</td></tr><tr><td>3. Keep_of_Kalessin</td><td>-2</td><td>160</td></tr><tr><td>4. Geordieboy85</td><td>+5</td><td>190</td></tr><tr><td>T5. WingisBack</td><td>DNP</td><td>0</td></tr><tr><td>T5. SimChars68</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. Polekatt</td><td>+13</td><td>250</td></tr><tr><td>T2. zdubz92</td><td>DNP</td><td>0</td></tr><tr><td>T2. isosaku77</td><td>DNP</td><td>0</td></tr><tr><td>T2. Hendomedes</td><td>DNP</td><td>0</td></tr><tr><td>T2. IceCream</td><td>DNP</td><td>0</td></tr><tr><td>T2. CanuckxX89</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W5: Frag Hill Rock (19-25 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Tenbobnote</td><td>-6</td><td>200</td></tr><tr><td>2. Mr Longpole</td><td>-4</td><td>180</td></tr><tr><td>3. Colly45x</td><td>-1</td><td>160</td></tr><tr><td>T4. x3offthetee</td><td>+4</td><td>240</td></tr><tr><td>T4. Geordieboy85</td><td>+4</td><td>140</td></tr><tr><td>6. Keep_of_Kalessin</td><td>+6</td><td>100</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. Horusphoenix</td><td>-4</td><td>200</td></tr><tr><td>2. er114ic</td><td>E</td><td>230</td></tr><tr><td>3. Hoplinkz</td><td>+3</td><td>160</td></tr><tr><td>4. NoWorreis37908</td><td>+21</td><td>140</td></tr><tr><td>5. Polekatt</td><td>+25</td><td>170</td></tr><tr><td>6. iluvJeezus</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-7</td><td>250</td></tr><tr><td>2. SimChars68</td><td>+18</td><td>180</td></tr><tr><td>T3. zdubz92</td><td>DNP</td><td>0</td></tr><tr><td>T3. GovernmentAgent</td><td>DNP</td><td>0</td></tr><tr><td>T3. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T3. BotClappintonll</td><td>DNP</td><td>0</td></tr><tr><td>T3. Stando Cuz</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W4: Commonwealth Yach & Sail (12-18 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-14</td><td>125</td></tr><tr><td>2. Keep_of_Kalessin</td><td>-13</td><td>115</td></tr><tr><td>3. Tenbobnote</td><td>-10</td><td>80</td></tr><tr><td>T4. Mr Longpole</td><td>-7</td><td>70</td></tr><tr><td>T4. Geordieboy85</td><td>-7</td><td>70</td></tr><tr><td>6. x3offthetee</td><td>-1</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-21</td><td>100</td></tr><tr><td>2. Horusphoenix</td><td>-8</td><td>90</td></tr><tr><td>3. er114ic</td><td>-3</td><td>105</td></tr><tr><td>4. Hoplinkz</td><td>+3</td><td>95</td></tr><tr><td>5. NoWorreis37908</td><td>+10</td><td>60</td></tr><tr><td>6. Polekatt</td><td>+17</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. zdubz92</td><td>-5</td><td>100</td></tr><tr><td>2. WingisBack</td><td>-2</td><td>115</td></tr><tr><td>3. SimChars68</td><td>+4</td><td>105</td></tr><tr><td>T4. GovernmentAgent</td><td>DNP</td><td>0</td></tr><tr><td>T4. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T4. BotClappintonll</td><td>DNP</td><td>0</td></tr><tr><td>T4. Stando Cuz</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W3: Wheatland Prairie Club (5-11 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-7</td><td>100</td></tr><tr><td>T2. Tenbobnote</td><td>-4</td><td>115</td></tr><tr><td>T2. Geordieboy85</td><td>-4</td><td>115</td></tr><tr><td>4. Mr Longpole</td><td>-1</td><td>70</td></tr><tr><td>5. Keep_of_Kalessin</td><td>+2</td><td>60</td></tr><tr><td>6. x3offthetee</td><td>+5</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-9</td><td>125</td></tr><tr><td>2. er114ic</td><td>-2</td><td>90</td></tr><tr><td>3. NoWorreis37908</td><td>+16</td><td>80</td></tr><tr><td>4. Polekatt</td><td>+21</td><td>70</td></tr><tr><td>T5. Hoplinkz</td><td>DNP</td><td>0</td></tr><tr><td>T5. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. Stando Cuz</td><td>-10</td><td>100</td></tr><tr><td>2. WingisBack</td><td>-5</td><td>115</td></tr><tr><td>3. SimChars68</td><td>+6</td><td>105</td></tr><tr><td>T4. zdubz92</td><td>DNP</td><td>0</td></tr><tr><td>T4. GovernmentAgent</td><td>DNP</td><td>0</td></tr><tr><td>T4. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T4. BotClappintonll</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W2: Dunglass (29-4 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. x3offthetee</td><td>-11</td><td>125</td></tr><tr><td>2. Mr Longpole</td><td>-7</td><td>90</td></tr><tr><td>3. Colly45x</td><td>-5</td><td>80</td></tr><tr><td>4. Keep_of_Kalessin</td><td>-4</td><td>95</td></tr><tr><td>5. Geordieboy85</td><td>-1</td><td>60</td></tr><tr><td>6. Tenbobnote</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-17</td><td>100</td></tr><tr><td>2. er114ic</td><td>+2</td><td>115</td></tr><tr><td>3. NoWorreis37908</td><td>+6</td><td>80</td></tr><tr><td>4. Hoplinkz</td><td>+14</td><td>70</td></tr><tr><td>5. Polekatt</td><td>+16</td><td>85</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-5</td><td>100</td></tr><tr><td>2. SimChars68</td><td>-4</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+5</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+14</td><td>95</td></tr><tr><td>T5. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T5. BotClappintonll</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W1: Rockanje (2026-01-22 to 2026-01-28)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-8</td><td>100</td></tr><tr><td>2. Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>3. x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>4. Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>T5. Mr Longpole</td><td>+3</td><td>60</td></tr><tr><td>T5. Geordieboy85</td><td>+3</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-10</td><td>125</td></tr><tr><td>2. er114ic</td><td>-1</td><td>90</td></tr><tr><td>3. Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>4. NoWorreis37908</td><td>+4</td><td>95</td></tr><tr><td>5. Polekatt</td><td>+19</td><td>60</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-12</td><td>125</td></tr><tr><td>2. SimChars68</td><td>+6</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+7</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+17</td><td>95</td></tr><tr><td>5. bfctino</td><td>+22</td><td>60</td></tr><tr><td>6. BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>"
 }
