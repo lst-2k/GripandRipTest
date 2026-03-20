@@ -1,8 +1,8 @@
 {
-  "venue": "Rockanje",
-  "date": "2026-01-22 to 2026-01-28",
+  "venue": "Dunglass",
+  "date": "29-4 February 2026",
   "seasonNum": 1,
-  "weekNum": 1,
+  "weekNum": 2,
   "isSig": false,
   "doubleBonus": false,
   "players": [
@@ -10,7 +10,7 @@
       "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-8",
+      "toPar": "-5",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -20,9 +20,9 @@
       "name": "Keep_of_Kalessin",
       "console": "PS",
       "division": 1,
-      "toPar": "-7",
+      "toPar": "-4",
       "putt": "",
-      "shot": "",
+      "shot": "4",
       "ace": "",
       "alby": ""
     },
@@ -30,8 +30,8 @@
       "name": "x3offthetee",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-2",
-      "putt": "40.8",
+      "toPar": "-11",
+      "putt": "27.6",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -40,9 +40,9 @@
       "name": "Tenbobnote",
       "console": "PS",
       "division": 1,
-      "toPar": "E",
+      "toPar": "",
       "putt": "",
-      "shot": "15.3",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -50,7 +50,7 @@
       "name": "Mr Longpole",
       "console": "Xbox",
       "division": 1,
-      "toPar": "+3",
+      "toPar": "-7",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -60,7 +60,7 @@
       "name": "Geordieboy85",
       "console": "PS",
       "division": 1,
-      "toPar": "+3",
+      "toPar": "-1",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -70,8 +70,8 @@
       "name": "iluvJeezus",
       "console": "Xbox",
       "division": 2,
-      "toPar": "-10",
-      "putt": "37.1",
+      "toPar": "-17",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -80,8 +80,8 @@
       "name": "er114ic",
       "console": "PS",
       "division": 2,
-      "toPar": "-1",
-      "putt": "",
+      "toPar": "+2",
+      "putt": "39.3",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -90,7 +90,7 @@
       "name": "Hoplinkz",
       "console": "PS",
       "division": 2,
-      "toPar": "+2",
+      "toPar": "+14",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -100,9 +100,9 @@
       "name": "NoWorreis37908",
       "console": "Xbox",
       "division": 2,
-      "toPar": "+4",
+      "toPar": "+6",
       "putt": "",
-      "shot": "6.9",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -110,9 +110,9 @@
       "name": "Polekatt",
       "console": "PC",
       "division": 2,
-      "toPar": "+19",
+      "toPar": "+16",
       "putt": "",
-      "shot": "",
+      "shot": "37.4",
       "ace": "",
       "alby": ""
     },
@@ -130,8 +130,8 @@
       "name": "WingisBack",
       "console": "PS",
       "division": 3,
-      "toPar": "-12",
-      "putt": "56.8",
+      "toPar": "-5",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -140,7 +140,7 @@
       "name": "SimChars68",
       "console": "PC",
       "division": 3,
-      "toPar": "+6",
+      "toPar": "-4",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -150,7 +150,7 @@
       "name": "zdubz92",
       "console": "PS",
       "division": 3,
-      "toPar": "+7",
+      "toPar": "+5",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -160,9 +160,9 @@
       "name": "GovernmentAgent",
       "console": "PC",
       "division": 3,
-      "toPar": "+17",
-      "putt": "",
-      "shot": "11.2",
+      "toPar": "+14",
+      "putt": "33.8",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -170,7 +170,7 @@
       "name": "bfctino",
       "console": "PS",
       "division": 3,
-      "toPar": "+22",
+      "toPar": "",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -180,7 +180,7 @@
       "name": "BotClappintonll",
       "console": "PS",
       "division": 3,
-      "toPar": "+35",
+      "toPar": "",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -189,19 +189,22 @@
   ],
   "season": {
     "Colly45x": {
-      "points": 100,
-      "eventsPlayed": 1,
-      "wins": 1
+      "points": 180,
+      "eventsPlayed": 2,
+      "wins": 1,
+      "isTiedCurrent": false
     },
     "Keep_of_Kalessin": {
-      "points": 90,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 185,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "x3offthetee": {
-      "points": 105,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 230,
+      "eventsPlayed": 2,
+      "wins": 1,
+      "isTiedCurrent": false
     },
     "Tenbobnote": {
       "points": 95,
@@ -209,59 +212,70 @@
       "wins": 0
     },
     "Mr Longpole": {
-      "points": 60,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 150,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "Geordieboy85": {
-      "points": 60,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 120,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "iluvJeezus": {
-      "points": 125,
-      "eventsPlayed": 1,
-      "wins": 1
+      "points": 225,
+      "eventsPlayed": 2,
+      "wins": 2,
+      "isTiedCurrent": false
     },
     "er114ic": {
-      "points": 90,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 205,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "Hoplinkz": {
-      "points": 80,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 150,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "NoWorreis37908": {
-      "points": 95,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 175,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "Polekatt": {
-      "points": 60,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 145,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "WingisBack": {
-      "points": 125,
-      "eventsPlayed": 1,
-      "wins": 1
+      "points": 225,
+      "eventsPlayed": 2,
+      "wins": 2,
+      "isTiedCurrent": false
     },
     "SimChars68": {
-      "points": 90,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 180,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "zdubz92": {
-      "points": 80,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 160,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "GovernmentAgent": {
-      "points": 95,
-      "eventsPlayed": 1,
-      "wins": 0
+      "points": 190,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "isTiedCurrent": false
     },
     "bfctino": {
       "points": 60,
@@ -274,5 +288,5 @@
       "wins": 0
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S1 W1: Rockanje (22-28 Jan 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-8</td><td>100</td></tr><tr><td>2. Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>3. x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>4. Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>T5. Mr Longpole</td><td>+3</td><td>60</td></tr><tr><td>T5. Geordieboy85</td><td>+3</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-10</td><td>125</td></tr><tr><td>2. er114ic</td><td>-1</td><td>90</td></tr><tr><td>3. Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>4. NoWorreis37908</td><td>+4</td><td>95</td></tr><tr><td>5. Polekatt</td><td>+19</td><td>60</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-12</td><td>125</td></tr><tr><td>2. SimChars68</td><td>+6</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+7</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+17</td><td>95</td></tr><tr><td>5. bfctino</td><td>+22</td><td>60</td></tr><tr><td>6. BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>"
+  "historyHtml": "<div class=\"history-item\"><strong>S1 W2: Dunglass (29-4 February 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. x3offthetee</td><td>-11</td><td>125</td></tr><tr><td>2. Mr Longpole</td><td>-7</td><td>90</td></tr><tr><td>3. Colly45x</td><td>-5</td><td>80</td></tr><tr><td>4. Keep_of_Kalessin</td><td>-4</td><td>95</td></tr><tr><td>5. Geordieboy85</td><td>-1</td><td>60</td></tr><tr><td>6. Tenbobnote</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-17</td><td>100</td></tr><tr><td>2. er114ic</td><td>+2</td><td>115</td></tr><tr><td>3. NoWorreis37908</td><td>+6</td><td>80</td></tr><tr><td>4. Hoplinkz</td><td>+14</td><td>70</td></tr><tr><td>5. Polekatt</td><td>+16</td><td>85</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-5</td><td>100</td></tr><tr><td>2. SimChars68</td><td>-4</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+5</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+14</td><td>95</td></tr><tr><td>T5. bfctino</td><td>DNP</td><td>0</td></tr><tr><td>T5. BotClappintonll</td><td>DNP</td><td>0</td></tr></table></div><div class=\"history-item\"><strong>S1 W1: Rockanje (2026-01-22 to 2026-01-28)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>1. Colly45x</td><td>-8</td><td>100</td></tr><tr><td>2. Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>3. x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>4. Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>T5. Mr Longpole</td><td>+3</td><td>60</td></tr><tr><td>T5. Geordieboy85</td><td>+3</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>1. iluvJeezus</td><td>-10</td><td>125</td></tr><tr><td>2. er114ic</td><td>-1</td><td>90</td></tr><tr><td>3. Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>4. NoWorreis37908</td><td>+4</td><td>95</td></tr><tr><td>5. Polekatt</td><td>+19</td><td>60</td></tr><tr><td>6. Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>1. WingisBack</td><td>-12</td><td>125</td></tr><tr><td>2. SimChars68</td><td>+6</td><td>90</td></tr><tr><td>3. zdubz92</td><td>+7</td><td>80</td></tr><tr><td>4. GovernmentAgent</td><td>+17</td><td>95</td></tr><tr><td>5. bfctino</td><td>+22</td><td>60</td></tr><tr><td>6. BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>"
 }
