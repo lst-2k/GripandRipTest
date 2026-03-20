@@ -1,6 +1,6 @@
 {
   "venue": "Rockanje",
-  "date": "19-25 January '26",
+  "date": "",
   "seasonNum": 1,
   "weekNum": 1,
   "isSig": false,
@@ -10,7 +10,7 @@
       "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
-      "toPar": "",
+      "toPar": "-8",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -20,7 +20,7 @@
       "name": "Keep_of_Kalessin",
       "console": "PS",
       "division": 1,
-      "toPar": "",
+      "toPar": "-7",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -30,8 +30,8 @@
       "name": "x3offthetee",
       "console": "Xbox",
       "division": 1,
-      "toPar": "",
-      "putt": "",
+      "toPar": "-2",
+      "putt": "40.8",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -40,19 +40,9 @@
       "name": "Tenbobnote",
       "console": "PS",
       "division": 1,
-      "toPar": "",
+      "toPar": "E",
       "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "Geordieboy",
-      "console": "PS",
-      "division": 1,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
+      "shot": "15.3",
       "ace": "",
       "alby": ""
     },
@@ -60,27 +50,37 @@
       "name": "Mr Longpole",
       "console": "Xbox",
       "division": 1,
-      "toPar": "",
+      "toPar": "+3",
       "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
     },
     {
-      "name": "iLuvJeezus",
+      "name": "Geordieboy85",
+      "console": "PS",
+      "division": 1,
+      "toPar": "+3",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "iluvJeezus",
       "console": "Xbox",
       "division": 2,
-      "toPar": "",
-      "putt": "",
+      "toPar": "-10",
+      "putt": "37.1",
       "shot": "",
       "ace": "",
       "alby": ""
     },
     {
-      "name": "Erii4ic",
+      "name": "Er114ic",
       "console": "PS",
       "division": 2,
-      "toPar": "",
+      "toPar": "-1",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -90,7 +90,7 @@
       "name": "Hoplinkz",
       "console": "PS",
       "division": 2,
-      "toPar": "",
+      "toPar": "+2",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -100,17 +100,17 @@
       "name": "NoWorries37908",
       "console": "Xbox",
       "division": 2,
-      "toPar": "",
+      "toPar": "+4",
       "putt": "",
-      "shot": "",
+      "shot": "6.9",
       "ace": "",
       "alby": ""
     },
     {
       "name": "Polekatt",
-      "console": "PC",
+      "console": "PS",
       "division": 2,
-      "toPar": "",
+      "toPar": "+19",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -130,7 +130,17 @@
       "name": "WingisBack",
       "console": "PS",
       "division": 3,
-      "toPar": "",
+      "toPar": "-12",
+      "putt": "56.8",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "zdubz92",
+      "console": "PS",
+      "division": 3,
+      "toPar": "+6",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -140,17 +150,7 @@
       "name": "SimChars68",
       "console": "PC",
       "division": 3,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "zdubz92",
-      "console": "PS",
-      "division": 3,
-      "toPar": "",
+      "toPar": "+6",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -160,9 +160,9 @@
       "name": "GovernmentAgent",
       "console": "PC",
       "division": 3,
-      "toPar": "",
+      "toPar": "+17",
       "putt": "",
-      "shot": "",
+      "shot": "11.2",
       "ace": "",
       "alby": ""
     },
@@ -170,7 +170,7 @@
       "name": "bfctino",
       "console": "PS",
       "division": 3,
-      "toPar": "",
+      "toPar": "+22",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -180,7 +180,7 @@
       "name": "BotClappintonll",
       "console": "PS",
       "division": 3,
-      "toPar": "",
+      "toPar": "+35",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -208,22 +208,22 @@
       "eventsPlayed": 1,
       "wins": 0
     },
-    "Geordieboy": {
+    "Mr Longpole": {
       "points": 60,
       "eventsPlayed": 1,
       "wins": 0
     },
-    "Mr Longpole": {
+    "Geordieboy85": {
       "points": 50,
       "eventsPlayed": 1,
       "wins": 0
     },
-    "iLuvJeezus": {
+    "iluvJeezus": {
       "points": 125,
       "eventsPlayed": 1,
       "wins": 1
     },
-    "Erii4ic": {
+    "Er114ic": {
       "points": 90,
       "eventsPlayed": 1,
       "wins": 0
@@ -248,12 +248,12 @@
       "eventsPlayed": 1,
       "wins": 1
     },
-    "SimChars68": {
+    "zdubz92": {
       "points": 90,
       "eventsPlayed": 1,
       "wins": 0
     },
-    "zdubz92": {
+    "SimChars68": {
       "points": 80,
       "eventsPlayed": 1,
       "wins": 0
@@ -274,5 +274,7 @@
       "wins": 0
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S1 W1: Rockanje</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-8</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>Geordieboy</td><td>+2</td><td>60</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>iLuvJeezus</td><td>-10</td><td>125</td></tr><tr><td>Erii4ic</td><td>-1</td><td>90</td></tr><tr><td>Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>NoWorries37908</td><td>+4</td><td>95</td></tr><tr><td>Polekatt</td><td>+19</td><td>60</td></tr><tr><td>Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>WingisBack</td><td>-12</td><td>125</td></tr><tr><td>SimChars68</td><td>+6</td><td>90</td></tr><tr><td>zdubz92</td><td>+7</td><td>80</td></tr><tr><td>GovernmentAgent</td><td>+17</td><td>95</td></tr><tr><td>bfctino</td><td>+22</td><td>60</td></tr><tr><td>BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>"
+  "historyHtml": "<div class=\"history-item\"><strong>S1 W1: Rockanje</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-8</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-7</td><td>90</td></tr><tr><td>x3offthetee</td><td>-2</td><td>105</td></tr><tr><td>Tenbobnote</td><td>E</td><td>95</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>60</td></tr><tr><td>Geordieboy85</td><td>+3</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>iluvJeezus</td><td>-10</td><td>125</td></tr><tr><td>Er114ic</td><td>-1</td><td>90</td></tr><tr><td>Hoplinkz</td><td>+2</td><td>80</td></tr><tr><td>NoWorries37908</td><td>+4</td><td>95</td></tr><tr><td>Polekatt</td><td>+19</td><td>60</td></tr><tr><td>Horusphoenix</td><td>DNP</td><td>0</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>WingisBack</td><td>-12</td><td>125</td></tr><tr><td>zdubz92</td><td>+6</td><td>90</td></tr><tr><td>SimChars68</td><td>+6</td><td>80</td></tr><tr><td>GovernmentAgent</td><td>+17</td><td>95</td></tr><tr><td>bfctino</td><td>+22</td><td>60</td></tr><tr><td>BotClappintonll</td><td>+35</td><td>50</td></tr></table></div>",
+  "startDate": "2026-01-22",
+  "endDate": "2026-01-28"
 }
