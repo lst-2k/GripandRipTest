@@ -137,21 +137,20 @@
                 document.getElementById('standings-area').innerHTML += h + "</tbody></table></div></div>";
             });
 
-			if(d.historyHtml) {
-                const historyArea = document.getElementById('history-area');
-                // 1. Drop the accordion HTML from Admin directly into the page
-                historyArea.innerHTML = d.historyHtml;
-
-                // 2. Add icons to the names inside the history tables
-                historyArea.querySelectorAll('tr').forEach(tr => {
-                    let nameCell = tr.querySelector('td:first-child');
-                    if(nameCell && !tr.innerText.includes("DIVISION")) {
-                        let name = nameCell.innerText.trim();
-                        let p = d.players.find(x => x.name === name);
-                        if(p) {
-                            nameCell.innerHTML = `<div class="p-name-cell">${getIcon(p.console)} ${name}</div>`;
+            if(d.historyHtml) {
+                const tempDiv = document.createElement('div'); tempDiv.innerHTML = d.historyHtml;
+                tempDiv.querySelectorAll('.history-item').forEach(item => {
+                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
+                    let table = item.querySelector('table');
+                    let newTable = `<thead><tr><th class="left-align" style="width:1%; white-space:nowrap;">Player</th><th style="width:50px;">Total</th><th style="width:50px;">Points</th></tr></thead><tbody>`;
+                    table.querySelectorAll('tr').forEach(tr => {
+                        let cells = tr.querySelectorAll('td, th');
+                        if(tr.innerText.includes("Division")) newTable += `<tr style="background:#f1f5f9;"><td colspan="3" style="text-align:left; font-size:11px; font-weight:bold; color:#475569;">${tr.innerText.toUpperCase()}</td></tr>`;
+                        else if(cells.length === 3) {
+                            newTable += `<tr><td class="left-align" style="width:1%; white-space:nowrap;"><div class="p-name-cell">${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td style="font-weight:bold;">${cells[2].innerText}</td></tr>`;
                         }
-                    }
+                    });
+                    document.getElementById('history-area').innerHTML += `<div class="hist-acc"><div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="scroll-box" style="margin:0; box-shadow:none;"><table style="width:auto; min-width:0; margin-right:auto;">${newTable}</tbody></table></div></div></div>`;
                 });
             }
         } catch(e) { console.log(e); }
