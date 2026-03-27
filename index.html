@@ -37,11 +37,12 @@
         .pos-cell { width: 40px; font-weight: 800; color: #94a3b8; background: #f8fafc; border-right: 1px solid #e2e8f0; }
         .points-cell { background: #f0fdf4; color: #15803d; font-weight: 800; width: 50px; }
         
-        .standings-grid { 
+		/* STANDINGS SPECIFIC OPTIMIZATIONS */
+		.standings-grid { 
 			display: flex; 
-			flex-direction: column; /* Forces vertical stacking on all screens */
+			flex-direction: column; 
 			gap: 25px; 
-			align-items: center; /* Centers the cards horizontally */
+			align-items: center; 
 			width: 100%;
 		}
 
@@ -49,11 +50,19 @@
 			background: white; 
 			border-radius: 12px; 
 			overflow: hidden; 
-			/* Set a comfortable width for laptop while allowing it to shrink for mobile */
 			width: 100%;
-			max-width: 600px; 
+			/* This matches the .container max-width so it aligns with the top tables */
+			max-width: 1000px; 
 			height: fit-content; 
 			box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+		}
+
+		/* Adjustments for Desktop/Landscape */
+		@media (min-width: 800px) {
+			.st-card {
+				/* Matches the visual footprint of the leaderboards above */
+				width: 100%; 
+			}
 		}
 
 		.st-card h4 { 
@@ -66,23 +75,15 @@
 			letter-spacing: 1px; 
 		}
 
-		.st-card .scroll-box { 
-			width: 100%; 
-			overflow: hidden; 
-			margin: 0; 
-			box-shadow: none; 
-		}
-
 		.st-card table { 
 			width: 100%; 
-			min-width: 0; 
-			table-layout: fixed; /* Ensures column widths are strictly followed */
+			table-layout: fixed; 
 		}
 
 		/* Column 1 (POS): Fixed narrow */
-		.st-card th:nth-child(1), .st-card td:nth-child(1) { width: 40px; }
+		.st-card th:nth-child(1), .st-card td:nth-child(1) { width: 45px; }
 
-		/* Column 2 (Player): Flexible space to prevent cutting off names */
+		/* Column 2 (Player): Flexible space */
 		.st-card .left-align { 
 			white-space: nowrap; 
 			overflow: hidden;
@@ -90,18 +91,18 @@
 			text-align: left !important;
 		}
 
-		/* Columns 3, 4 (P, W): Fixed narrow, right aligned */
+		/* Columns 3, 4 (P, W): Right aligned */
 		.st-card th:nth-child(3), .st-card td:nth-child(3),
 		.st-card th:nth-child(4), .st-card td:nth-child(4) { 
-			width: 40px; 
+			width: 50px; 
 			text-align: right; 
 		}
 
-		/* Column 5 (PTS): Fixed width, right aligned */
+		/* Column 5 (PTS): Right aligned */
 		.st-card .points-cell { 
-			width: 60px; 
+			width: 70px; 
 			text-align: right; 
-			padding-right: 15px; 
+			padding-right: 20px; 
 		}
 
         .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; border-radius: 0 0 12px 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
