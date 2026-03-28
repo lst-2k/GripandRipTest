@@ -38,72 +38,64 @@
         .points-cell { background: #f0fdf4; color: #15803d; font-weight: 800; width: 50px; }
         
 		/* STANDINGS SPECIFIC OPTIMIZATIONS */
-		.standings-grid { 
-			display: flex; 
-			flex-direction: column; 
-			gap: 25px; 
-			align-items: center; 
-			width: 100%;
-		}
+	.standings-grid { 
+		display: flex; 
+		flex-direction: column; 
+		gap: 20px; 
+		align-items: center; 
+		width: 100%;
+	}
 
-		.st-card { 
-			background: white; 
-			border-radius: 12px; 
-			overflow: hidden; 
-			width: 100%;
-			/* This matches the .container max-width so it aligns with the top tables */
-			max-width: 1000px; 
-			height: fit-content; 
-			box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
-		}
+	.st-card { 
+		background: white; 
+		border-radius: 12px; 
+		overflow-x: auto; /* Allows internal scroll ONLY if a name is massive */
+		width: 100%;
+		max-width: 1000px; 
+		box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+	}
 
-		/* Adjustments for Desktop/Landscape */
-		@media (min-width: 800px) {
-			.st-card {
-				/* Matches the visual footprint of the leaderboards above */
-				width: 100%; 
-			}
-		}
+	.st-card table { 
+		width: 100%; 
+		border-collapse: collapse;
+		/* Removed table-layout: fixed to allow name column to dictate width */
+	}
 
-		.st-card h4 { 
-			background: var(--slate-light); 
-			color: white; 
-			margin: 0; 
-			padding: 12px; 
-			text-align: center; 
-			font-size: 11px; 
-			letter-spacing: 1px; 
-		}
+	/* POS Column: Bare minimum width */
+	.st-card th:nth-child(1), .st-card td:nth-child(1) { 
+		width: 25px; 
+		padding: 10px 5px;
+	}
 
-		.st-card table { 
-			width: 100%; 
-			table-layout: fixed; 
-		}
+	/* Player Column: Left aligned, no truncation, no wrapping */
+	.st-card .left-align { 
+		text-align: left !important;
+		white-space: nowrap; /* Ensures names never break into 2 lines */
+		padding-left: 10px;
+	}
 
-		/* Column 1 (POS): Fixed narrow */
-		.st-card th:nth-child(1), .st-card td:nth-child(1) { width: 45px; }
+	/* P, W, and PTS Columns: Forced to be as narrow as their content */
+	.st-card th:nth-child(3), .st-card td:nth-child(3),
+	.st-card th:nth-child(4), .st-card td:nth-child(4),
+	.st-card .points-cell { 
+		width: 1%; /* This forces the column to shrink to fit the text/header */
+		white-space: nowrap;
+		text-align: center;
+		padding: 10px 8px; /* Small horizontal padding to keep it tight */
+	}
 
-		/* Column 2 (Player): Flexible space */
-		.st-card .left-align { 
-			white-space: nowrap; 
-			overflow: hidden;
-			text-overflow: ellipsis; 
-			text-align: left !important;
-		}
+	/* Specific alignment for Points to match your previous request */
+	.st-card .points-cell {
+		text-align: right;
+		padding-right: 15px;
+		font-weight: 800;
+	}
 
-		/* Columns 3, 4 (P, W): Right aligned */
-		.st-card th:nth-child(3), .st-card td:nth-child(3),
-		.st-card th:nth-child(4), .st-card td:nth-child(4) { 
-			width: 50px; 
-			text-align: right; 
-		}
-
-		/* Column 5 (PTS): Right aligned */
-		.st-card .points-cell { 
-			width: 70px; 
-			text-align: right; 
-			padding-right: 20px; 
-		}
+	/* Ensure the container doesn't have extra padding causing a body-scroll */
+	@media (max-width: 600px) {
+		body { padding: 10px; }
+		.container { padding: 0; }
+	}
 
         .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; border-radius: 0 0 12px 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         .high-tag { background: white; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 11px; display: flex; align-items: center; gap: 6px; color: var(--primary); }
