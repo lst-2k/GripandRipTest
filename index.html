@@ -11,7 +11,16 @@
             --bg: #0f172a; --card-bg: #ffffff; --text-main: #1e293b;
             --red: #ef4444; --green: #10b981; --slate-light: #475569;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); margin: 0; padding: 15px; color: white; min-height: 100vh; scroll-behavior: smooth; }
+         body { 
+			font-family: 'Inter', sans-serif; 
+			background-color: var(--bg); 
+			margin: 0; 
+			padding: 10px; /* Reduced from 15px */
+			color: white; 
+			min-height: 100vh; 
+			overflow-x: hidden; /* This kills the side-scroll on iPhone */
+			width: 100%;
+		}
         .container { max-width: 1000px; margin: auto; }
         .logo-container { max-width: 1000px; margin: 0 auto 20px auto; }
         .logo-container img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
@@ -53,27 +62,25 @@
 			width: 100%;
 			max-width: 1000px; 
 			box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-			box-sizing: border-box; /* Ensures padding doesn't add to width */
 		}
 
 		.st-card table { 
 			width: 100%; 
 			border-collapse: collapse;
-			table-layout: fixed; /* Forces the browser to strictly follow the % below */
+			table-layout: fixed; /* Keeps columns locked to the percentages below */
 		}
 
-		/* TOTAL MUST EQUAL 100% */
+		/* TOTAL PERCENTAGES = 100% */
 
-		/* 1. POS Column (10%) */
+		/* POS: 10% */
 		.st-card th:nth-child(1), .st-card td:nth-child(1) { 
 			width: 10%; 
 			text-align: center;
-			padding: 10px 0;
 		}
 
-		/* 2. Player Column (45%) - Increased slightly from your 40 to fill gap */
+		/* Player: 40% (Reduced to guarantee fit on iPhone 13) */
 		.st-card .left-align { 
-			width: 45%; 
+			width: 40%; 
 			text-align: left !important;
 			padding-left: 5px;
 		}
@@ -83,38 +90,30 @@
 			overflow: hidden;
 			display: flex;
 			align-items: center;
-			gap: 5px;
+			gap: 4px;
 		}
 
-		/* 3 & 4. P and W Columns (12.5% each = 25%) */
+		/* P and W: 15% each (30% total) */
 		.st-card th:nth-child(3), .st-card td:nth-child(3),
 		.st-card th:nth-child(4), .st-card td:nth-child(4) { 
-			width: 12.5%; 
+			width: 15%; 
 			text-align: center; 
-			padding: 10px 0;
 		}
 
-		/* 5. PTS Column (20%) */
+		/* PTS: 20% */
 		.st-card .points-cell { 
 			width: 20%; 
 			text-align: right; 
-			padding-right: 15px; 
+			padding-right: 10px; 
 			font-weight: 800;
 		}
 
-		/* CRITICAL: Fix for mobile overflow */
-		@media (max-width: 600px) {
-			body { 
-				padding: 10px; 
-				margin: 0;
-				width: 100%;
-				overflow-x: hidden; /* Stops the whole page from shaking left/right */
-			}
-			.container { 
-				width: 100%; 
-				max-width: 100%;
-				padding: 0; 
-			}
+		/* Fix for the container on mobile */
+		.container { 
+			width: 100%; 
+			max-width: 1000px; 
+			margin: auto;
+			padding: 0; 
 		}
 
         .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; border-radius: 0 0 12px 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
