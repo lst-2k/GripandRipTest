@@ -52,54 +52,69 @@
 			overflow: hidden; 
 			width: 100%;
 			max-width: 1000px; 
-			box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+			box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+			box-sizing: border-box; /* Ensures padding doesn't add to width */
 		}
 
 		.st-card table { 
 			width: 100%; 
 			border-collapse: collapse;
-			table-layout: fixed; /* Fixed layout is necessary to respect the % widths */
+			table-layout: fixed; /* Forces the browser to strictly follow the % below */
 		}
 
-		/* POS Column - Very narrow */
+		/* TOTAL MUST EQUAL 100% */
+
+		/* 1. POS Column (10%) */
 		.st-card th:nth-child(1), .st-card td:nth-child(1) { 
-			width: 8%; 
+			width: 10%; 
 			text-align: center;
 			padding: 10px 0;
 		}
 
-		/* Player Column - Locked to 40% of the screen */
+		/* 2. Player Column (45%) - Increased slightly from your 40 to fill gap */
 		.st-card .left-align { 
-			width: 40%; 
+			width: 45%; 
 			text-align: left !important;
-			padding-left: 8px;
+			padding-left: 5px;
 		}
 
 		.st-card .p-name-cell {
 			white-space: nowrap;
-			overflow: hidden; /* This keeps the name from pushing the table wider */
-			display: block;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			gap: 5px;
 		}
 
-		/* P, W Columns - Distributed in the remaining space */
+		/* 3 & 4. P and W Columns (12.5% each = 25%) */
 		.st-card th:nth-child(3), .st-card td:nth-child(3),
 		.st-card th:nth-child(4), .st-card td:nth-child(4) { 
-			width: 10%; 
+			width: 12.5%; 
 			text-align: center; 
+			padding: 10px 0;
 		}
 
-		/* PTS Column - Remaining ~12% */
+		/* 5. PTS Column (20%) */
 		.st-card .points-cell { 
-			width: 12%; 
+			width: 20%; 
 			text-align: right; 
-			padding-right: 12px; 
+			padding-right: 15px; 
 			font-weight: 800;
 		}
 
-		/* Force container to fit mobile screen exactly */
+		/* CRITICAL: Fix for mobile overflow */
 		@media (max-width: 600px) {
-			body { padding: 10px; }
-			.container { width: 100%; padding: 0; margin: 0; }
+			body { 
+				padding: 10px; 
+				margin: 0;
+				width: 100%;
+				overflow-x: hidden; /* Stops the whole page from shaking left/right */
+			}
+			.container { 
+				width: 100%; 
+				max-width: 100%;
+				padding: 0; 
+			}
 		}
 
         .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; border-radius: 0 0 12px 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
