@@ -2,162 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Grip&Rip Rebirth74</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { 
-            --primary: #1e293b; --secondary: #10b981; --accent: #fbbf24; 
-            --bg: #0f172a; --card-bg: #ffffff; --text-main: #1e293b;
-            --red: #ef4444; --green: #10b981; --slate-light: #475569;
+            --primary: #6366f1; /* Indigo accent */
+            --secondary: #10b981; 
+            --accent: #fbbf24; 
+            --bg: #0f172a; 
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --red: #ef4444; 
+            --green: #22c55e;
+            --border: rgba(255, 255, 255, 0.1);
         }
-         body { 
-			font-family: 'Inter', sans-serif; 
-			background-color: var(--bg); 
-			margin: 0; 
-			padding: 10px; /* Reduced from 15px */
-			color: white; 
-			min-height: 100vh; 
-			overflow-x: hidden; /* This kills the side-scroll on iPhone */
-			width: 100%;
-		}
-        .container { max-width: 1000px; margin: auto; }
-        .logo-container { max-width: 1000px; margin: 0 auto 20px auto; }
-        .logo-container img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-        .header-card { background: var(--card-bg); padding: 30px; border-radius: 16px; margin-bottom: 30px; text-align: center; color: var(--primary); border-bottom: 4px solid var(--secondary); position: relative; transition: all 0.4s ease; }
-        .header-card.is-major { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); color: white; border-bottom: 4px solid var(--accent); }
-        .badge-area { display: flex; justify-content: center; gap: 10px; margin-bottom: 12px; }
-        .event-badge { padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; display: none; }
+
+        * { box-sizing: border-box; }
+
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            background-color: var(--bg); 
+            background-image: radial-gradient(circle at top right, #1e1b4b, var(--bg));
+            margin: 0; 
+            padding: 10px; 
+            color: var(--text-main); 
+            min-height: 100vh; 
+            line-height: 1.5;
+        }
+
+        .container { max-width: 900px; margin: auto; }
+
+        /* Header & Logo */
+        .logo-container { margin: 10px auto 20px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .logo-container img { width: 100%; height: auto; display: block; }
+
+        .header-card { 
+            background: var(--card-bg); 
+            padding: 25px; 
+            border-radius: 20px; 
+            margin-bottom: 25px; 
+            text-align: center; 
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        
+        .header-card.is-major { 
+            background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%); 
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .badge-area { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
+        .event-badge { 
+            padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; 
+            text-transform: uppercase; letter-spacing: 1px; display: none; 
+        }
         .is-major .major-tag { display: inline-block; background: var(--accent); color: #000; }
         .has-db .db-tag { display: inline-block; background: var(--secondary); color: #fff; }
-        #hof-trigger { position: absolute; top: 15px; left: 15px; }
-        .hof-btn { background: rgba(16, 185, 129, 0.1); color: var(--secondary); border: 1px solid var(--secondary); padding: 5px 10px; border-radius: 6px; font-size: 10px; cursor: pointer; font-weight: bold; }
-        h2 { color: white; font-size: 1.2rem; margin: 30px 0 15px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px;}
-        h3 { color: var(--secondary); text-align: left; margin: 0 0 10px 0; font-size: 1.1rem; }
-        .scroll-box { width: 100%; overflow-x: auto; background: white; border-radius: 12px; margin-bottom: 0px; color: var(--text-main); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        table { width: 100%; border-collapse: collapse; min-width: 550px; }
-        th { background: #f8fafc; color: #64748b; padding: 10px; font-size: 10px; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; }
-        td { padding: 12px 10px; border-bottom: 1px solid #f1f5f9; text-align: center; font-size: 13px; font-weight: 500; }
-        .left-align { text-align: left !important; }
-        .p-name-cell { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-weight: 700; }
-        .score-red { color: var(--red) !important; font-weight: 800; }
-        .score-green { color: var(--green) !important; font-weight: 800; }
-        .score-black { color: var(--primary) !important; font-weight: 800; }
-        .pos-cell { width: 40px; font-weight: 800; color: #94a3b8; background: #f8fafc; border-right: 1px solid #e2e8f0; }
-        .points-cell { background: #f0fdf4; color: #15803d; font-weight: 800; width: 50px; }
-        
-		/* STANDINGS SPECIFIC OPTIMIZATIONS */
-		.standings-grid { 
-			display: flex; 
-			flex-direction: column; 
-			gap: 20px; 
-			align-items: center; 
-			width: 100%;
-		}
 
-		.st-card { 
-			background: white; 
-			border-radius: 12px; 
-			overflow: hidden; 
-			width: 100%;
-			max-width: 1000px; 
-			box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-		}
+        /* Typography */
+        h2 { 
+            font-size: 1.1rem; margin: 30px 0 15px; display: flex; align-items: center; 
+            gap: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim);
+        }
+        h3 { 
+            background: rgba(255,255,255,0.05); padding: 10px 15px; margin: 0; 
+            font-size: 0.9rem; color: var(--secondary); border-radius: 12px 12px 0 0;
+            border: 1px solid var(--border); border-bottom: none;
+        }
 
-		.st-card table { 
-			width: 100%; 
-			border-collapse: collapse;
-			table-layout: fixed; /* Keeps columns locked to the percentages below */
-		}
+        /* Universal Table Styling */
+        .table-wrapper { 
+            width: 100%; overflow-x: auto; background: var(--card-bg); 
+            border-radius: 0 0 12px 12px; border: 1px solid var(--border);
+            margin-bottom: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            -webkit-overflow-scrolling: touch;
+        }
 
-		/* TOTAL PERCENTAGES = 100% */
+        table { 
+            width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 500px; 
+        }
 
-		/* POS: 10% */
-		.st-card th:nth-child(1), .st-card td:nth-child(1) { 
-			width: 10%; 
-			text-align: center;
-		}
+        th { 
+            background: rgba(15, 23, 42, 0.5); color: var(--text-dim); 
+            padding: 12px 8px; font-size: 10px; text-transform: uppercase; 
+            font-weight: 700; text-align: center; border-bottom: 1px solid var(--border);
+        }
 
-		/* Player: 40% (Reduced to guarantee fit on iPhone 13) */
-		.st-card .left-align { 
-			width: 40%; 
-			text-align: left !important;
-			padding-left: 5px;
-		}
+        td { 
+            padding: 14px 8px; border-bottom: 1px solid var(--border); 
+            text-align: center; font-size: 13px; font-weight: 500;
+        }
 
-		.st-card .p-name-cell {
-			white-space: nowrap;
-			overflow: hidden;
-			display: flex;
-			align-items: center;
-			gap: 4px;
-		}
+        /* Column Widths (Shared across Leaderboard & Standings for uniformity) */
+        .col-pos { width: 30px; font-weight: 800; color: var(--text-dim); }
+        .col-player { width: 150px; text-align: left !important; }
+        .col-data { width: 40px; }
+        .col-pts { width: 40px; background: rgba(16, 185, 129, 0.05); color: var(--secondary); font-weight: 800; }
 
-		/* P and W: 15% each (30% total) */
-		.st-card th:nth-child(3), .st-card td:nth-child(3),
-		.st-card th:nth-child(4), .st-card td:nth-child(4) { 
-			width: 15%; 
-			text-align: center; 
-		}
+        .p-name-cell { display: flex; align-items: center; gap: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-		/* PTS: 20% */
-		.st-card .points-cell { 
-			width: 20%; 
-			text-align: right; 
-			padding-right: 10px; 
-			font-weight: 800;
-		}
+        /* Score Coloring */
+        .score-red { color: var(--red); font-weight: 800; }
+        .score-green { color: var(--green); font-weight: 800; }
 
-		/* Fix for the container on mobile */
-		.container { 
-			width: 100%; 
-			max-width: 1000px; 
-			margin: auto;
-			padding: 0; 
-		}
+        /* Highlights Bar */
+        .highlights-bar { 
+            display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; 
+            background: rgba(0,0,0,0.2); border-radius: 0 0 12px 12px;
+            margin-bottom: 25px; border: 1px solid var(--border); border-top: none;
+        }
+        .high-tag { 
+            background: #0f172a; padding: 5px 10px; border-radius: 6px; 
+            font-size: 11px; border: 1px solid var(--border); display: flex; align-items: center; gap: 6px;
+        }
+        .high-tag.gold { border-color: var(--accent); color: var(--accent); }
 
-        .highlights-bar { background: #f8fafc; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; border-radius: 0 0 12px 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .high-tag { background: white; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 11px; display: flex; align-items: center; gap: 6px; color: var(--primary); }
-        .high-tag.gold { border-color: var(--accent); background: #fffdf0; font-weight: bold; color: #92400e; }
+        /* Standings Specific */
+        .st-card { margin-bottom: 20px; }
+        .st-card h4 { margin: 0; padding: 12px; background: #334155; border-radius: 12px 12px 0 0; font-size: 12px; letter-spacing: 1px; }
 
-        .hist-acc { margin-bottom: 10px; border-radius: 8px; overflow: hidden; background: white; color: var(--text-main); }
-        .hist-header { background: #334155; color: white; padding: 12px 15px; cursor: pointer; font-weight: bold; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
-        .hist-content { display: none; padding: 10px; background: white; }
+        /* History Accordion */
+        .hist-acc { margin-bottom: 10px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+        .hist-header { background: var(--card-bg); padding: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; }
+        .hist-content { display: none; padding: 0; background: #0f172a; }
         .hist-content.active { display: block; }
-        #backToTop { position: fixed; bottom: 40px; right: 25px; width: 50px; height: 50px; background: var(--secondary); color: white; border: none; border-radius: 50%; cursor: pointer; display: none; font-size: 20px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.4); transition: 0.3s; margin-bottom: env(safe-area-inset-bottom); }
+
+        #backToTop { 
+            position: fixed; bottom: 30px; right: 20px; width: 45px; height: 45px; 
+            background: var(--primary); color: white; border: none; border-radius: 12px; 
+            cursor: pointer; display: none; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+        }
     </style>
 </head>
 <body>
 
-<button id="backToTop" onclick="window.scrollTo(0,0)"><i class="fa-solid fa-arrow-up"></i></button>
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fa-solid fa-arrow-up"></i></button>
 
 <div class="container">
-    <div id="hof-trigger" style="display:none;"><button class="hof-btn" onclick="openHof()">🏆 HALL OF FAME</button></div>
     <div class="logo-container"><img src="logo.png" alt="League Logo"></div>
+    
     <div id="header" class="header-card">
-        <div class="badge-area"><span class="event-badge major-tag">🏆 Major Event</span><span class="event-badge db-tag">🔥 2X Side Pots</span></div>
-        <h1 id="v-name" style="margin:0;">Tournament</h1>
-        <div style="margin-top:5px; font-weight:600; opacity:0.8;"><span id="v-sw">S-- W--</span> &bull; <span id="v-date">--</span></div>
+        <div class="badge-area">
+            <span class="event-badge major-tag">🏆 Major</span>
+            <span class="event-badge db-tag">🔥 2X Points</span>
+        </div>
+        <h1 id="v-name" style="margin:0; font-size: 1.8rem; letter-spacing: -0.5px;">Tournament</h1>
+        <div style="margin-top:8px; font-size: 14px; color: var(--text-dim);">
+            <span id="v-sw">Season -- Week --</span> • <span id="v-date">--</span>
+        </div>
     </div>
-    <h2><i class="fa-solid fa-trophy"></i> Leaderboard</h2>
+
+    <h2><i class="fa-solid fa-trophy" style="color:var(--accent)"></i> Leaderboards</h2>
     <div id="div-tables"></div>
-    <h2><i class="fa-solid fa-ranking-star"></i> Standings</h2>
-    <div class="standings-grid" id="standings-area"></div>
+
+    <h2><i class="fa-solid fa-ranking-star" style="color:var(--primary)"></i> Season Standings</h2>
+    <div id="standings-area"></div>
+
     <h2><i class="fa-solid fa-clock-rotate-left"></i> History</h2>
     <div id="history-area"></div>
 </div>
 
 <script>
-    window.onscroll = () => { document.getElementById("backToTop").style.display = (window.scrollY > 300) ? "block" : "none"; };
+    window.onscroll = () => { document.getElementById("backToTop").style.display = (window.scrollY > 400) ? "block" : "none"; };
     
     function getIcon(v) { 
-        let c = v==="PS"?"#003791":v==="Xbox"?"#107C10":"#171a21";
+        let c = v==="PS"?"#3b82f6":v==="Xbox"?"#22c55e":"#94a3b8";
         let i = v==="PS"?"playstation":v==="Xbox"?"xbox":"steam";
-        return `<i class="fa-brands fa-${i}" style="color:${c};"></i>`; 
+        return `<i class="fa-brands fa-${i}" style="color:${c}; font-size:14px;"></i>`; 
     }
     
     function parseToPar(v) { if(!v||v==="") return 999; let c = v.toString().toUpperCase(); return (c==='E'||c==='0')?0:parseInt(v); }
-    function getScoreClass(v) { let n = parseToPar(v); if(n===999) return ""; return n<0?"score-red":(n===0?"score-green":"score-black"); }
+    function getScoreClass(v) { let n = parseToPar(v); if(n===999) return ""; return n<0?"score-red":(n===0?"score-green":""); }
 
     async function loadData() {
         try {
@@ -172,7 +189,16 @@
             // Leaderboards
             [1,2,3].forEach(dv => {
                 const players = d.players.filter(p => p.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
-                let h = `<h3>Division ${dv}</h3><div class="scroll-box"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th>To Par</th><th>Putt</th><th>Shot</th><th>Ace</th><th>Alby</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
+                let h = `<h3>Division ${dv}</h3><div class="table-wrapper"><table><thead><tr>
+                    <th class="col-pos">POS</th>
+                    <th class="col-player">Player</th>
+                    <th class="col-data">Par</th>
+                    <th class="col-data">Putt</th>
+                    <th class="col-data">Shot</th>
+                    <th class="col-data">Ace</th>
+                    <th class="col-data">Alby</th>
+                    <th class="col-pts">PTS</th>
+                </tr></thead><tbody>`;
                 
                 let maxP={v:0,n:''}, maxS={v:0,n:''}, aces=[], albys=[];
 
@@ -180,7 +206,16 @@
                     let s = parseToPar(p.toPar); 
                     let fI = players.findIndex(x => parseToPar(x.toPar) === s);
                     let pts = (p.toPar!=="" || p.putt!=="") ? calculate(p, fI, d.isSig, d.doubleBonus) : "--";
-                    h += `<tr><td class="pos-cell">${s===999?"--":fI+1}</td><td style="width:1%; white-space:nowrap;"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td class="${getScoreClass(p.toPar)}">${p.toPar||'--'}</td><td>${p.putt||'--'}</td><td>${p.shot||'--'}</td><td>${p.ace||'--'}</td><td>${p.alby||'--'}</td><td class="points-cell">${pts}</td></tr>`;
+                    h += `<tr>
+                        <td class="col-pos">${s===999?"--":fI+1}</td>
+                        <td class="col-player"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td>
+                        <td class="${getScoreClass(p.toPar)}">${p.toPar||'--'}</td>
+                        <td>${p.putt||'--'}</td>
+                        <td>${p.shot||'--'}</td>
+                        <td>${p.ace||'--'}</td>
+                        <td>${p.alby||'--'}</td>
+                        <td class="col-pts">${pts}</td>
+                    </tr>`;
                     let pVal = parseInt(p.putt) || 0, sVal = parseInt(p.shot) || 0;
                     if(pVal > maxP.v) maxP = {v:pVal, n:p.name};
                     if(sVal > maxS.v) maxS = {v:sVal, n:p.name};
@@ -190,46 +225,58 @@
                 h += `</tbody></table></div>`;
 
                 let hBar = `<div class="highlights-bar">`;
-                if(maxP.v > 0) hBar += `<div class="high-tag"><span>🎯</span> <strong>Longest Putt:</strong> ${maxP.n} (${maxP.v}ft)</div>`;
-                if(maxS.v > 0) hBar += `<div class="high-tag"><span>🏌🏻</span> <strong>Longest Shot:</strong> ${maxS.n} (${maxS.v}yds)</div>`;
+                if(maxP.v > 0) hBar += `<div class="high-tag"><span>🎯</span> <strong>Putt:</strong> ${maxP.n} (${maxP.v}ft)</div>`;
+                if(maxS.v > 0) hBar += `<div class="high-tag"><span>🏌🏻</span> <strong>Shot:</strong> ${maxS.n} (${maxS.v}yds)</div>`;
                 aces.forEach(n => hBar += `<div class="high-tag gold"><span>⛳</span> <strong>ACE:</strong> ${n}</div>`);
                 albys.forEach(n => hBar += `<div class="high-tag gold"><span>🦅</span> <strong>ALBATROSS:</strong> ${n}</div>`);
                 hBar += `</div>`;
 
-                document.getElementById('div-tables').innerHTML += h + ((maxP.v > 0 || maxS.v > 0 || aces.length > 0 || albys.length > 0) ? hBar : '<div style="margin-bottom:20px;"></div>');
+                document.getElementById('div-tables').innerHTML += h + ((maxP.v > 0 || maxS.v > 0 || aces.length > 0 || albys.length > 0) ? hBar : '<div style="margin-bottom:25px;"></div>');
             });
 
-            // Standings Area
+            // Standings
             const arch = d.season||{};
             [1,2,3].forEach(dv => {
-                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="scroll-box"><table><thead><tr><th class="pos-cell">POS</th><th class="left-align">Player</th><th>P</th><th>W</th><th class="points-cell">PTS</th></tr></thead><tbody>`;
+                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="table-wrapper"><table><thead><tr>
+                    <th class="col-pos">POS</th>
+                    <th class="col-player">Player</th>
+                    <th class="col-data">Event</th>
+                    <th class="col-data">Wins</th>
+                    <th class="col-pts">TOTAL</th>
+                </tr></thead><tbody>`;
                 let sp = d.players.filter(p => p.division == dv).map(p => ({
                     name:p.name, console:p.console, total:arch[p.name]?.points||0, ev:arch[p.name]?.eventsPlayed||0, wins:arch[p.name]?.wins||0
                 })).sort((a,b) => b.total-a.total);
                 
                 sp.forEach((p, i) => {
-                    h += `<tr><td class="pos-cell">${i+1}</td><td class="left-align"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td><td>${p.ev}</td><td>${p.wins}</td><td class="points-cell">${p.total}</td></tr>`;
+                    h += `<tr>
+                        <td class="col-pos">${i+1}</td>
+                        <td class="col-player"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td>
+                        <td>${p.ev}</td>
+                        <td>${p.wins}</td>
+                        <td class="col-pts">${p.total}</td>
+                    </tr>`;
                 });
                 document.getElementById('standings-area').innerHTML += h + "</tbody></table></div></div>";
             });
 
-            // History Area
+            // History
             if(d.historyHtml) {
                 const tempDiv = document.createElement('div'); tempDiv.innerHTML = d.historyHtml;
                 tempDiv.querySelectorAll('.history-item').forEach(item => {
-                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 &bull;");
+                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 •");
                     let table = item.querySelector('table');
-                    let newTable = `<thead><tr><th class="left-align" style="width:1%; white-space:nowrap;">Player</th><th style="width:50px;">Total</th><th style="width:50px;">Points</th></tr></thead><tbody>`;
+                    let newTable = `<thead><tr><th class="col-player">Player</th><th class="col-data">Total</th><th class="col-pts">Points</th></tr></thead><tbody>`;
                     table.querySelectorAll('tr').forEach(tr => {
                         let cells = tr.querySelectorAll('td, th');
                         if(tr.innerText.includes("Division")) {
-                            newTable += `<tr style="background:#f1f5f9;"><td colspan="3" style="text-align:left; font-size:11px; font-weight:bold; color:#475569;">${tr.innerText.toUpperCase()}</td></tr>`;
+                            newTable += `<tr style="background:rgba(255,255,255,0.05);"><td colspan="3" style="text-align:left; font-size:11px; font-weight:bold; color:var(--secondary); padding-left:15px;">${tr.innerText.toUpperCase()}</td></tr>`;
                         } else if(cells.length === 3) {
                             let p = d.players.find(x => x.name === cells[0].innerText);
-                            newTable += `<tr><td class="left-align" style="width:1%; white-space:nowrap;"><div class="p-name-cell">${p ? getIcon(p.console) : ''} ${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td style="font-weight:bold;">${cells[2].innerText}</td></tr>`;
+                            newTable += `<tr><td class="col-player"><div class="p-name-cell">${p ? getIcon(p.console) : ''} ${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td class="col-pts">${cells[2].innerText}</td></tr>`;
                         }
                     });
-                    document.getElementById('history-area').innerHTML += `<div class="hist-acc"><div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="scroll-box" style="margin:0; box-shadow:none;"><table style="width:auto; min-width:0; margin-right:auto;">${newTable}</tbody></table></div></div></div>`;
+                    document.getElementById('history-area').innerHTML += `<div class="hist-acc"><div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="table-wrapper" style="border:none; border-radius:0;"><table>${newTable}</tbody></table></div></div></div>`;
                 });
             }
         } catch(e) { console.log(e); }
