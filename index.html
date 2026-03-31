@@ -1,295 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Grip&Rip Rebirth74</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>LST 74 Matchplay Live</title>
     <style>
-        :root { 
-            --primary: #6366f1; /* Indigo accent */
-            --secondary: #10b981; 
-            --accent: #fbbf24; 
-            --bg: #0f172a; 
-            --card-bg: #1e293b;
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
-            --red: #ef4444; 
-            --green: #22c55e;
-            --border: rgba(255, 255, 255, 0.1);
+        :root {
+            --p1-color: #1976d2; 
+            --p2-color: #d32f2f; 
+            --tie-color: #008000; 
+            --gold: #FFD700;
+            --header-bg: #d1d1d1;
         }
-
-        * { box-sizing: border-box; }
-
-        body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            background-color: var(--bg); 
-            background-image: radial-gradient(circle at top right, #1e1b4b, var(--bg));
-            margin: 0; 
-            padding: 10px; 
-            color: var(--text-main); 
-            min-height: 100vh; 
-            line-height: 1.5;
-        }
-
-        .container { max-width: 900px; margin: auto; }
-
-        /* Header & Logo */
-        .logo-container { margin: 10px auto 20px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-        .logo-container img { width: 100%; height: auto; display: block; }
-
-        .header-card { 
-            background: var(--card-bg); 
-            padding: 25px; 
-            border-radius: 20px; 
-            margin-bottom: 25px; 
-            text-align: center; 
-            border: 1px solid var(--border);
-            position: relative;
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #eef2ee; padding-bottom: 20px; color: #222; font-size: 0.75rem; }
         
-        .header-card.is-major { 
-            background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%); 
-            border-bottom: 4px solid var(--accent);
+        .header-box { width: 100%; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); border-bottom: 3px solid var(--gold); margin-bottom: 5px; }
+        .header-box img { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
+
+        .swipe-prompt { text-align: center; color: #777; font-size: 0.65rem; margin: 8px 0; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+
+        .carousel-wrapper { 
+            display: flex; overflow-x: auto; gap: 15px; padding: 0 10px 20px 10px;
+            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
         }
+        .carousel-item { flex: 0 0 100%; max-width: 700px; scroll-snap-align: center; }
+        @media (min-width: 750px) { .carousel-item { flex: 0 0 700px; } }
 
-        .badge-area { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
-        .event-badge { 
-            padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; 
-            text-transform: uppercase; letter-spacing: 1px; display: none; 
+        .match-container { background: #DCDCDC; padding: 10px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .card-header { display: flex; align-items: center; justify-content: center; gap: 20px; font-weight: 900; font-size: 0.9rem; margin-bottom: 2px; }
+        
+        .venue-row { text-align: center; font-style: italic; font-size: 0.7rem; color: #555; margin-bottom: 5px; text-transform: uppercase; }
+
+        .match-result-banner { text-align: center; font-size: 0.85rem; margin: 4px 0; padding: 6px; color: white; border-radius: 4px; font-weight: bold; }
+        
+        table { border-collapse: collapse; width: 100%; margin-bottom: 8px; background: white; font-size: 0.65rem; }
+        th, td { border: 1px solid #bbb; padding: 4px 1px; text-align: center; min-width: 22px; }
+        th { background: var(--header-bg); color: #000; font-weight: 800; }
+        
+        .row-label { background: #f8f8f8; font-weight: bold; width: 85px; text-align: left; padding-left: 6px; border-right: 2px solid #ccc; }
+        .col-sum { background: #e0e0e0; font-weight: bold; width: 32px; border-left: 2px solid #bbb; }
+        .score-val { font-size: 0.85rem; font-weight: 900; }
+        
+        .win-cell-p1 { background: var(--p1-color) !important; color: white !important; }
+        .win-cell-p2 { background: var(--p2-color) !important; color: white !important; }
+        .tie-cell { background: var(--tie-color) !important; color: white !important; }
+
+        .status-row { font-size: 0.55rem; color: #666; font-weight: bold; background: #fdfdfd; }
+        .status-p1 { color: var(--p1-color); }
+        .status-p2 { color: var(--p2-color); }
+
+        .section-box { max-width: 700px; margin: 15px auto; background: white; padding: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .history-box { border-top: 3px solid #555; }
+        .standings-box { border-top: 3px solid #1565c0; }
+        
+        details { margin-bottom: 8px; border-bottom: 1px solid #eee; }
+        summary { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 8px; 
+            background: #fdffdf; 
+            cursor: pointer; 
+            list-style: none;
+            border-radius: 4px;
         }
-        .is-major .major-tag { display: inline-block; background: var(--accent); color: #000; }
-        .has-db .db-tag { display: inline-block; background: var(--secondary); color: #fff; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '▼'; font-size: 0.6rem; color: #555; }
+        details[open] summary::after { content: '▲'; }
+        details[open] summary { background: #f4f4f4; }
 
-        /* Typography */
-        h2 { 
-            font-size: 1.1rem; margin: 30px 0 15px; display: flex; align-items: center; 
-            gap: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim);
-        }
-        h3 { 
-            background: rgba(255,255,255,0.05); padding: 10px 15px; margin: 0; 
-            font-size: 0.9rem; color: var(--secondary); border-radius: 12px 12px 0 0;
-            border: 1px solid var(--border); border-bottom: none;
-        }
+        .hist-match-row { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; padding: 6px 0; border-bottom: 1px dashed #eee; }
+        .hist-player-left { flex: 1; text-align: right; font-weight: bold; padding-right: 12px; }
+        .hist-result-center { flex: 0 0 95px; text-align: center; font-weight: 900; font-size: 0.75rem; background: #f4f4f4; border-radius: 4px; padding: 3px 0; border: 1px solid #ddd; }
+        .hist-player-right { flex: 1; text-align: left; font-weight: bold; padding-left: 12px; }
+        
+        .week-label { font-weight: bold; color: #1565c0; font-size: 0.8rem; border-left: 3px solid #1565c0; padding-left: 8px; }
 
-        /* Universal Table Styling */
-        .table-wrapper { 
-            width: 100%; overflow-x: auto; background: var(--card-bg); 
-            border-radius: 0 0 12px 12px; border: 1px solid var(--border);
-            margin-bottom: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            -webkit-overflow-scrolling: touch;
-        }
-
-        table { 
-            width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 500px; 
-        }
-
-        th { 
-            background: rgba(15, 23, 42, 0.5); color: var(--text-dim); 
-            padding: 12px 8px; font-size: 10px; text-transform: uppercase; 
-            font-weight: 700; text-align: center; border-bottom: 1px solid var(--border);
-        }
-
-        td { 
-            padding: 14px 8px; border-bottom: 1px solid var(--border); 
-            text-align: center; font-size: 13px; font-weight: 500;
-        }
-
-        /* Column Widths (Shared across Leaderboard & Standings for uniformity) */
-        .col-pos { width: 30px; font-weight: 800; color: var(--text-dim); }
-        .col-player { width: 150px; text-align: left !important; }
-        .col-data { width: 40px; }
-        .col-pts { width: 40px; background: rgba(16, 185, 129, 0.05); color: var(--secondary); font-weight: 800; }
-
-        .p-name-cell { display: flex; align-items: center; gap: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-        /* Score Coloring */
-        .score-red { color: var(--red); font-weight: 800; }
-        .score-green { color: var(--green); font-weight: 800; }
-
-        /* Highlights Bar */
-        .highlights-bar { 
-            display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; 
-            background: rgba(0,0,0,0.2); border-radius: 0 0 12px 12px;
-            margin-bottom: 25px; border: 1px solid var(--border); border-top: none;
-        }
-        .high-tag { 
-            background: #0f172a; padding: 5px 10px; border-radius: 6px; 
-            font-size: 11px; border: 1px solid var(--border); display: flex; align-items: center; gap: 6px;
-        }
-        .high-tag.gold { border-color: var(--accent); color: var(--accent); }
-
-        /* Standings Specific */
-        .st-card { margin-bottom: 20px; }
-        .st-card h4 { margin: 0; padding: 12px; background: #334155; border-radius: 12px 12px 0 0; font-size: 12px; letter-spacing: 1px; }
-
-        /* History Accordion */
-        .hist-acc { margin-bottom: 10px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
-        .hist-header { background: var(--card-bg); padding: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; }
-        .hist-content { display: none; padding: 0; background: #0f172a; }
-        .hist-content.active { display: block; }
-
-        #backToTop { 
-            position: fixed; bottom: 30px; right: 20px; width: 45px; height: 45px; 
-            background: var(--primary); color: white; border: none; border-radius: 12px; 
-            cursor: pointer; display: none; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
-        }
+        .p1-txt { color: var(--p1-color); }
+        .p2-txt { color: var(--p2-color); }
+        .tie-txt { color: var(--tie-color); }
+        
+        .player-col { text-align: left !important; font-weight: bold; padding: 6px !important; width: 130px; font-size: 0.8rem; }
+        .pts-active { background: #fff9c4; border-left: 2px solid #fbc02d; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="header-box"><img src="logo.png" alt="LST 74 Matchplay"></div>
 
-<div class="container">
-    <div class="logo-container"><img src="logo.png" alt="League Logo"></div>
-    
-    <div id="header" class="header-card">
-        <div class="badge-area">
-            <span class="event-badge major-tag">🏆 Major</span>
-            <span class="event-badge db-tag">🔥 2X Points</span>
-        </div>
-        <h1 id="v-name" style="margin:0; font-size: 1.8rem; letter-spacing: -0.5px;">Tournament</h1>
-        <div style="margin-top:8px; font-size: 14px; color: var(--text-dim);">
-            <span id="v-sw">Season -- Week --</span> • <span id="v-date">--</span>
-        </div>
-    </div>
+<div class="swipe-prompt">↔ SWIPE FOR ACTIVE MATCHES ↔</div>
 
-    <h2><i class="fa-solid fa-trophy" style="color:var(--accent)"></i> Leaderboards</h2>
-    <div id="div-tables"></div>
+<div id="carousel" class="carousel-wrapper"></div>
 
-    <h2><i class="fa-solid fa-ranking-star" style="color:var(--primary)"></i> Season Standings</h2>
-    <div id="standings-area"></div>
+<div class="section-box history-box">
+    <h3 style="margin-top:0; font-size:0.85rem; color:#444;">MATCH HISTORY</h3>
+    <div id="history-list"></div>
+</div>
 
-    <h2><i class="fa-solid fa-clock-rotate-left"></i> History</h2>
-    <div id="history-area"></div>
+<div class="section-box standings-box">
+    <h3 style="margin-top:0; font-size:0.85rem; color: #1565c0;">SEASON STANDINGS</h3>
+    <table>
+        <thead>
+            <tr style="background: #f0f0f0;">
+                <th class="player-col">Player</th>
+                <th style="width: 30px;">P</th>
+                <th style="width: 30px;">W</th>
+                <th style="width: 30px;">D</th>
+                <th style="width: 30px;">L</th>
+                <th style="width: 45px;">Pts</th>
+                <th style="width: 30px;">+/-</th>
+            </tr>
+        </thead>
+        <tbody id="standings-body"></tbody>
+    </table>
 </div>
 
 <script>
-    window.onscroll = () => { document.getElementById("backToTop").style.display = (window.scrollY > 400) ? "block" : "none"; };
+async function loadData() {
+    try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        renderMatches(data.matches); 
+        renderStandings(data.history, data.playerPool);
+        renderHistory(data.history);
+    } catch (e) { console.error(e); }
+}
+
+function getSum(arr, start, end) {
+    return arr.slice(start, end).reduce((a, b) => a + (parseInt(b) || 0), 0);
+}
+
+function renderMatches(matches) {
+    const container = document.getElementById('carousel');
+    container.innerHTML = '';
+    if(!matches || matches.length === 0) { container.innerHTML = "<p style='text-align:center;width:100%;padding:20px;'>No active matches.</p>"; return; }
     
-    function getIcon(v) { 
-        let c = v==="PS"?"#3b82f6":v==="Xbox"?"#22c55e":"#94a3b8";
-        let i = v==="PS"?"playstation":v==="Xbox"?"xbox":"steam";
-        return `<i class="fa-brands fa-${i}" style="color:${c}; font-size:14px;"></i>`; 
-    }
-    
-    function parseToPar(v) { if(!v||v==="") return 999; let c = v.toString().toUpperCase(); return (c==='E'||c==='0')?0:parseInt(v); }
-    function getScoreClass(v) { let n = parseToPar(v); if(n===999) return ""; return n<0?"score-red":(n===0?"score-green":""); }
-
-    async function loadData() {
-        try {
-            const res = await fetch('data.json'); 
-            const d = await res.json();
-            document.getElementById('v-name').innerText = d.venue;
-            if(d.isSig) document.getElementById('header').classList.add('is-major');
-            if(d.doubleBonus) document.getElementById('header').classList.add('has-db');
-            document.getElementById('v-sw').innerText = `Season ${d.seasonNum} Week ${d.weekNum}`;
-            document.getElementById('v-date').innerText = d.date;
-
-            // Leaderboards
-            [1,2,3].forEach(dv => {
-                const players = d.players.filter(p => p.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
-                let h = `<h3>Division ${dv}</h3><div class="table-wrapper"><table><thead><tr>
-                    <th class="col-pos">POS</th>
-                    <th class="col-player">Player</th>
-                    <th class="col-data">Par</th>
-                    <th class="col-data">Putt</th>
-                    <th class="col-data">Shot</th>
-                    <th class="col-data">Ace</th>
-                    <th class="col-data">Alby</th>
-                    <th class="col-pts">PTS</th>
-                </tr></thead><tbody>`;
-                
-                let maxP={v:0,n:''}, maxS={v:0,n:''}, aces=[], albys=[];
-
-                players.forEach(p => {
-                    let s = parseToPar(p.toPar); 
-                    let fI = players.findIndex(x => parseToPar(x.toPar) === s);
-                    let pts = (p.toPar!=="" || p.putt!=="") ? calculate(p, fI, d.isSig, d.doubleBonus) : "--";
-                    h += `<tr>
-                        <td class="col-pos">${s===999?"--":fI+1}</td>
-                        <td class="col-player"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td>
-                        <td class="${getScoreClass(p.toPar)}">${p.toPar||'--'}</td>
-                        <td>${p.putt||'--'}</td>
-                        <td>${p.shot||'--'}</td>
-                        <td>${p.ace||'--'}</td>
-                        <td>${p.alby||'--'}</td>
-                        <td class="col-pts">${pts}</td>
-                    </tr>`;
-                    let pVal = parseInt(p.putt) || 0, sVal = parseInt(p.shot) || 0;
-                    if(pVal > maxP.v) maxP = {v:pVal, n:p.name};
-                    if(sVal > maxS.v) maxS = {v:sVal, n:p.name};
-                    if(p.ace && p.ace.trim() !== "") aces.push(p.name); 
-                    if(p.alby && p.alby.trim() !== "") albys.push(p.name);
-                });
-                h += `</tbody></table></div>`;
-
-                let hBar = `<div class="highlights-bar">`;
-                if(maxP.v > 0) hBar += `<div class="high-tag"><span>🎯</span> <strong>Putt:</strong> ${maxP.n} (${maxP.v}ft)</div>`;
-                if(maxS.v > 0) hBar += `<div class="high-tag"><span>🏌🏻</span> <strong>Shot:</strong> ${maxS.n} (${maxS.v}yds)</div>`;
-                aces.forEach(n => hBar += `<div class="high-tag gold"><span>⛳</span> <strong>ACE:</strong> ${n}</div>`);
-                albys.forEach(n => hBar += `<div class="high-tag gold"><span>🦅</span> <strong>ALBATROSS:</strong> ${n}</div>`);
-                hBar += `</div>`;
-
-                document.getElementById('div-tables').innerHTML += h + ((maxP.v > 0 || maxS.v > 0 || aces.length > 0 || albys.length > 0) ? hBar : '<div style="margin-bottom:25px;"></div>');
-            });
-
-            // Standings
-            const arch = d.season||{};
-            [1,2,3].forEach(dv => {
-                let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="table-wrapper"><table><thead><tr>
-                    <th class="col-pos">POS</th>
-                    <th class="col-player">Player</th>
-                    <th class="col-data">Event</th>
-                    <th class="col-data">Wins</th>
-                    <th class="col-pts">TOTAL</th>
-                </tr></thead><tbody>`;
-                let sp = d.players.filter(p => p.division == dv).map(p => ({
-                    name:p.name, console:p.console, total:arch[p.name]?.points||0, ev:arch[p.name]?.eventsPlayed||0, wins:arch[p.name]?.wins||0
-                })).sort((a,b) => b.total-a.total);
-                
-                sp.forEach((p, i) => {
-                    h += `<tr>
-                        <td class="col-pos">${i+1}</td>
-                        <td class="col-player"><div class="p-name-cell">${getIcon(p.console)} ${p.name}</div></td>
-                        <td>${p.ev}</td>
-                        <td>${p.wins}</td>
-                        <td class="col-pts">${p.total}</td>
-                    </tr>`;
-                });
-                document.getElementById('standings-area').innerHTML += h + "</tbody></table></div></div>";
-            });
-
-            // History
-            if(d.historyHtml) {
-                const tempDiv = document.createElement('div'); tempDiv.innerHTML = d.historyHtml;
-                tempDiv.querySelectorAll('.history-item').forEach(item => {
-                    const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "Season $1, Week $2 •");
-                    let table = item.querySelector('table');
-                    let newTable = `<thead><tr><th class="col-player">Player</th><th class="col-data">Total</th><th class="col-pts">Points</th></tr></thead><tbody>`;
-                    table.querySelectorAll('tr').forEach(tr => {
-                        let cells = tr.querySelectorAll('td, th');
-                        if(tr.innerText.includes("Division")) {
-                            newTable += `<tr style="background:rgba(255,255,255,0.05);"><td colspan="3" style="text-align:left; font-size:11px; font-weight:bold; color:var(--secondary); padding-left:15px;">${tr.innerText.toUpperCase()}</td></tr>`;
-                        } else if(cells.length === 3) {
-                            let p = d.players.find(x => x.name === cells[0].innerText);
-                            newTable += `<tr><td class="col-player"><div class="p-name-cell">${p ? getIcon(p.console) : ''} ${cells[0].innerText}</div></td><td class="${getScoreClass(cells[1].innerText)}">${cells[1].innerText}</td><td class="col-pts">${cells[2].innerText}</td></tr>`;
-                        }
-                    });
-                    document.getElementById('history-area').innerHTML += `<div class="hist-acc"><div class="hist-header" onclick="this.nextElementSibling.classList.toggle('active')"><span>${title}</span><i class="fa-solid fa-chevron-down"></i></div><div class="hist-content"><div class="table-wrapper" style="border:none; border-radius:0;"><table>${newTable}</tbody></table></div></div></div>`;
-                });
+    matches.forEach(m => {
+        const div = document.createElement('div');
+        div.className = 'carousel-item';
+        
+        let bTxt = "Match Pending", bCol = "#555";
+        if (m.walkover) {
+            const winner = m.walkover === 'p1' ? m.p1Name : m.p2Name;
+            bTxt = `WALKOVER: ${winner}`;
+            bCol = "#777";
+        } else {
+            let p1S = 0, lastH = 0;
+            for(let i=0; i<18; i++) {
+                let s1 = parseInt(m.p1Scores[i]), s2 = parseInt(m.p2Scores[i]);
+                if(!isNaN(s1) && !isNaN(s2)) { lastH = i+1; if(s1 < s2) p1S++; else if(s2 < s1) p1S--; }
             }
-        } catch(e) { console.log(e); }
-    }
+            if(lastH > 0) {
+                if(p1S === 0) bTxt = "All Square";
+                else {
+                    const abs = Math.abs(p1S), rem = 18 - lastH;
+                    const winner = p1S > 0 ? m.p1Name : m.p2Name;
+                    bTxt = (abs > rem) ? (rem === 0 ? `${winner} 1 Up` : `${winner} ${abs} & ${rem}`) : `${winner} ${abs} Up`;
+                    bCol = p1S > 0 ? "var(--p1-color)" : "var(--p2-color)";
+                }
+            }
+        }
+        
+        div.innerHTML = `<div class="match-container">
+            <div class="card-header"><span class="p1-txt">${m.p1Name}</span><span style="font-size:0.6rem;font-weight:normal;color:#888">VS</span><span class="p2-txt">${m.p2Name}</span></div>
+            <div class="venue-row">${m.venue || 'TBA'}</div>
+            <div class="match-result-banner" style="background:${bCol}">${bTxt}</div>
+            ${renderSubTable(m, 0, 'OUT')}${renderSubTable(m, 9, 'IN', true)}
+        </div>`;
+        container.appendChild(div);
+    });
+}
 
-    function calculate(p, idx, isM, isDB) {
-        let base = {0:100, 1:90, 2:80, 3:70, 4:60, 5:50}[idx] || 0;
-        let bM = isDB ? 2 : 1; let bonus = 0;
-        if(parseInt(p.putt) > 0) bonus += (25*bM); if(parseInt(p.shot) > 0) bonus += (25*bM);
-        if(p.ace && p.ace.trim() !== "") bonus += (50*bM); if(p.alby && p.alby.trim() !== "") bonus += (50*bM);
-        return isM ? (base + bonus) * 2 : (base + bonus);
+function renderSubTable(m, start, label, isSecond = false) {
+    const p1Out = getSum(m.p1Scores, 0, 9), p1In = getSum(m.p1Scores, 9, 18);
+    const p2Out = getSum(m.p2Scores, 0, 9), p2In = getSum(m.p2Scores, 9, 18);
+    const parOut = getSum(m.pars, 0, 9), parIn = getSum(m.pars, 9, 18);
+    
+    let h = `<table><tr><th class="row-label">HOLE</th>`;
+    for(let i=1; i<=9; i++) h += `<th>${i+start}</th>`;
+    h += `<th class="col-sum">${label}</th>${isSecond ? '<th>TOT</th>' : ''}</tr>`;
+    h += `<tr><td class="row-label">PAR</td>`;
+    for(let i=0; i<9; i++) h += `<td>${m.pars[i+start]}</td>`;
+    h += `<td class="col-sum">${isSecond ? parIn : parOut}</td>${isSecond ? `<td>${parOut+parIn}</td>` : ''}</tr>`;
+
+    h += `<tr><td class="row-label p1-txt">${m.p1Name}</td>`;
+    for(let i=0; i<9; i++) {
+        let s1 = parseInt(m.p1Scores[i+start]), s2 = parseInt(m.p2Scores[i+start]);
+        let c = (!isNaN(s1) && !isNaN(s2)) ? (s1 < s2 ? "win-cell-p1" : (s1 > s2 ? "" : "tie-cell")) : "";
+        h += `<td class="score-val ${c}">${m.p1Scores[i+start] || ''}</td>`;
     }
-    window.onload = loadData;
+    h += `<td class="col-sum">${isSecond ? p1In : p1Out}</td>${isSecond ? `<td>${p1Out+p1In}</td>` : ''}</tr>`;
+
+    h += `<tr><td class="row-label p2-txt">${m.p2Name}</td>`;
+    for(let i=0; i<9; i++) {
+        let s1 = parseInt(m.p1Scores[i+start]), s2 = parseInt(m.p2Scores[i+start]);
+        let c = (!isNaN(s1) && !isNaN(s2)) ? (s2 < s1 ? "win-cell-p2" : (s2 > s1 ? "" : "tie-cell")) : "";
+        h += `<td class="score-val ${c}">${m.p2Scores[i+start] || ''}</td>`;
+    }
+    h += `<td class="col-sum">${isSecond ? p2In : p2Out}</td>${isSecond ? `<td>${p2Out+p2In}</td>` : ''}</tr>`;
+
+    h += `<tr class="status-row"><td class="row-label">STATUS</td>`;
+    let runningDiff = 0, matchOverAtHole = 99; 
+    for(let i=0; i < (start + 9); i++) {
+        let s1 = parseInt(m.p1Scores[i]), s2 = parseInt(m.p2Scores[i]);
+        if(!isNaN(s1) && !isNaN(s2)) {
+            if(s1 < s2) runningDiff++; else if(s2 < s1) runningDiff--;
+            if (Math.abs(runningDiff) > (17 - i) && matchOverAtHole === 99) matchOverAtHole = i;
+        }
+        if (i >= start) {
+            let txt = "", cls = "";
+            if (!isNaN(s1) && !isNaN(s2) && i <= matchOverAtHole) {
+                if (runningDiff > 0) { txt = runningDiff + " UP"; cls = "status-p1"; }
+                else if (runningDiff < 0) { txt = Math.abs(runningDiff) + " UP"; cls = "status-p2"; }
+                else txt = "A/S";
+            }
+            h += `<td class="${cls}">${txt}</td>`;
+        }
+    }
+    h += `<td class="col-sum"></td>${isSecond ? '<td></td>' : ''}</tr></table>`;
+    return h;
+}
+
+function renderStandings(history, playerPool) {
+    const stats = {};
+    playerPool.forEach(p => stats[p] = { p: 0, w: 0, d: 0, l: 0, pts: 0 });
+    
+    history.forEach(w => w.results.forEach(r => {
+        if (!stats[r.p1] || !stats[r.p2]) return;
+        stats[r.p1].p++; stats[r.p2].p++;
+        
+        if (r.walkover === 'p1') { stats[r.p1].w++; stats[r.p1].pts += 2; stats[r.p2].l++; }
+        else if (r.walkover === 'p2') { stats[r.p2].w++; stats[r.p2].pts += 2; stats[r.p1].l++; }
+        else {
+            let d = 0, played = false;
+            for(let i=0; i<18; i++) {
+                let v1 = parseInt(r.scores.p1[i]), v2 = parseInt(r.scores.p2[i]);
+                if(!isNaN(v1) && !isNaN(v2)) { played = true; if(v1 < v2) d++; else if(v2 < v1) d--; }
+            }
+            if (played) {
+                if (d > 0) { stats[r.p1].w++; stats[r.p1].pts += 2; stats[r.p2].l++; }
+                else if (d < 0) { stats[r.p2].w++; stats[r.p2].pts += 2; stats[r.p1].l++; }
+                else { stats[r.p1].d++; stats[r.p1].pts += 1; stats[r.p2].d++; stats[r.p2].pts += 1; }
+            } else { stats[r.p1].p--; stats[r.p2].p--; }
+        }
+    }));
+    const sorted = Object.keys(stats).sort((a,b) => stats[b].pts - stats[a].pts);
+    document.getElementById('standings-body').innerHTML = sorted.map(name => `
+        <tr><td class="player-col">${name}</td><td>${stats[name].p}</td><td>${stats[name].w}</td><td>${stats[name].d}</td><td>${stats[name].l}</td><td class="pts-active">${stats[name].pts}</td><td>●</td></tr>
+    `).join('');
+}
+
+function renderHistory(history) {
+    const list = document.getElementById('history-list');
+    list.innerHTML = history.slice().reverse().map((w, index) => {
+        let matchesHtml = w.results.map(r => {
+            let resTxt = "v", resCls = "";
+            if (r.walkover) {
+                resTxt = "W / O";
+                resCls = r.walkover === 'p1' ? "p1-txt" : "p2-txt";
+            } else {
+                let diff = 0, played = false, last = 0;
+                for(let i=0; i<18; i++) {
+                    let v1 = parseInt(r.scores.p1[i]), v2 = parseInt(r.scores.p2[i]);
+                    if(!isNaN(v1) && !isNaN(v2)) { played = true; last = i+1; if(v1 < v2) diff++; else if(v2 < v1) diff--; }
+                }
+                if(played) {
+                    if(diff === 0) { resTxt = "A / S"; resCls = "tie-txt"; }
+                    else {
+                        const abs = Math.abs(diff), rem = 18 - last;
+                        resTxt = (abs > rem) ? (rem === 0 ? "1 UP" : `${abs} & ${rem}`) : `${abs} UP`;
+                        resCls = diff > 0 ? "p1-txt" : "p2-txt";
+                    }
+                }
+            }
+            return `<div class="hist-match-row">
+                <div class="hist-player-left p1-txt">${r.p1}</div>
+                <div class="hist-result-center ${resCls}">${resTxt}</div>
+                <div class="hist-player-right p2-txt">${r.p2}</div>
+            </div>`;
+        }).join('');
+        return `<details ${index === 0 ? 'open' : ''}><summary><div class="week-label">${w.label}</div></summary><div style="padding:10px 0;">${matchesHtml}</div></details>`;
+    }).join('');
+}
+loadData();
 </script>
 </body>
 </html>
