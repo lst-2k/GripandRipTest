@@ -149,6 +149,8 @@
     <h2><i class="fa-solid fa-ranking-star"></i> Season Standings</h2>
     <div id="standings-area"></div>
 
+    <div class="logo-container"><img src="2k25logo.png" alt="2K25 Logo"></div>
+
     <h2><i class="fa-solid fa-clock-rotate-left"></i> History</h2>
     <div id="history-area"></div>
 </div>
@@ -223,7 +225,7 @@
                 document.getElementById('div-tables').innerHTML += h + ((maxP.v > 0 || maxS.v > 0 || aces.length > 0 || albys.length > 0) ? hBar : '<div style="margin-bottom:10px;"></div>');
             });
 
-            // Standings with ACC column
+            // Standings with TIED logic (Total first, then ACC)
             const arch = d.season||{};
             [1,2,3].forEach(dv => {
                 let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="table-wrapper"><table><thead><tr>
@@ -235,8 +237,16 @@
                     <th class="col-pts">TOTAL</th>
                 </tr></thead><tbody>`;
                 let sp = d.players.filter(p => p.division == dv).map(p => ({
-                    name:p.name, console:p.console, total:arch[p.name]?.points||0, ev:arch[p.name]?.eventsPlayed||0, wins:arch[p.name]?.wins||0, acc:arch[p.name]?.acc||'--'
-                })).sort((a,b) => b.total-a.total);
+                    name:p.name, 
+                    console:p.console, 
+                    total:arch[p.name]?.points||0, 
+                    ev:arch[p.name]?.eventsPlayed||0, 
+                    wins:arch[p.name]?.wins||0, 
+                    acc:arch[p.name]?.acc||'--'
+                })).sort((a,b) => {
+                    if (b.total !== a.total) return b.total - a.total; // Sort by points descending
+                    return parseToPar(a.acc) - parseToPar(b.acc);     // Tie-breaker: Lower ACC score ascending
+                });
                 
                 sp.forEach((p, i) => {
                     h += `<tr>
