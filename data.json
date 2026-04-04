@@ -3,7 +3,7 @@
   "date": "2 Apr - 8 Apr 2026",
   "seasonNum": 5,
   "weekNum": 10,
-  "isSig": false,
+  "isSig": true,
   "doubleBonus": false,
   "players": [
     {
