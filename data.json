@@ -1,5 +1,5 @@
 {
-  "venue": "Roxburghe",
+  "venue": "A Censored Golf Club",
   "date": "2026-04-09 to 2026-04-15",
   "seasonNum": 6,
   "weekNum": 1,
@@ -7,27 +7,7 @@
   "doubleBonus": false,
   "players": [
     {
-      "name": "x3offthetee",
-      "console": "Xbox",
-      "division": 1,
-      "toPar": "+2",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": "1"
-    },
-    {
-      "name": "Geordieboy85",
-      "console": "PS",
-      "division": 2,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "Mr Longpole",
+      "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
       "toPar": "+1",
@@ -37,22 +17,22 @@
       "alby": ""
     },
     {
-      "name": "Colly45x",
-      "console": "Xbox",
-      "division": 1,
-      "toPar": "-1",
-      "putt": "26",
+      "name": "Keep_of_Kalessin",
+      "console": "PS",
+      "division": 2,
+      "toPar": "+6",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
     },
     {
-      "name": "Keep_of_Kalessin",
-      "console": "PS",
-      "division": 2,
-      "toPar": "",
+      "name": "Mr Longpole",
+      "console": "Xbox",
+      "division": 1,
+      "toPar": "+3",
       "putt": "",
-      "shot": "",
+      "shot": "5",
       "ace": "",
       "alby": ""
     },
@@ -60,17 +40,17 @@
       "name": "Tenbobnote",
       "console": "PS",
       "division": 1,
-      "toPar": "-6",
-      "putt": "",
+      "toPar": "+8",
+      "putt": "55.6",
       "shot": "",
       "ace": "",
       "alby": ""
     },
     {
-      "name": "iluvJeezus",
+      "name": "Geordieboy85",
       "console": "PS",
-      "division": 0,
-      "toPar": "",
+      "division": 1,
+      "toPar": "+17",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -87,31 +67,11 @@
       "alby": ""
     },
     {
-      "name": "Er114ic",
-      "console": "PS",
-      "division": 1,
-      "toPar": "E",
-      "putt": "",
-      "shot": "156",
-      "ace": "156",
-      "alby": ""
-    },
-    {
-      "name": "NoWorries",
-      "console": "Xbox",
-      "division": 1,
-      "toPar": "+4",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
       "name": "Polekatt",
       "console": "PC",
-      "division": 3,
-      "toPar": "",
-      "putt": "",
+      "division": 2,
+      "toPar": "+28",
+      "putt": "23.3",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -119,98 +79,8 @@
     {
       "name": "Horusphoenix",
       "console": "Xbox",
-      "division": 2,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "SimChars",
-      "console": "PS",
-      "division": 2,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "z.dub.z",
-      "console": "PS",
-      "division": 3,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "GovernmentAgent",
-      "console": "PS",
-      "division": 0,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "bfctino",
-      "console": "PS",
-      "division": 0,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "BotClappintonll",
-      "console": "PC",
-      "division": 0,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "WingisBack",
-      "console": "PS",
-      "division": 2,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "Isosaku77",
-      "console": "PS",
-      "division": 3,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "CanuckxX89",
-      "console": "Xbox",
-      "division": 3,
-      "toPar": "",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
-      "name": "Hendomedes",
-      "console": "Xbox",
-      "division": 3,
-      "toPar": "",
+      "division": 1,
+      "toPar": "-1",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -218,9 +88,9 @@
     },
     {
       "name": "IceCream",
-      "console": "PS",
-      "division": 3,
-      "toPar": "",
+      "console": "PC",
+      "division": 2,
+      "toPar": "+35",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -230,7 +100,57 @@
       "name": "Hammers1man",
       "console": "PC",
       "division": 3,
-      "toPar": "",
+      "toPar": "+12",
+      "putt": "34.1",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Er114ic",
+      "console": "PS",
+      "division": 2,
+      "toPar": "+1",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "X3offtheTee",
+      "console": "Xbox",
+      "division": 2,
+      "toPar": "+5",
+      "putt": "",
+      "shot": "44",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "NoWorries",
+      "console": "Xbox",
+      "division": 1,
+      "toPar": "+33",
+      "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Rendallio",
+      "console": "PS",
+      "division": 3,
+      "toPar": "+2",
+      "putt": "",
+      "shot": "15.3",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "BIGavoLEO",
+      "console": "Xbox",
+      "division": 3,
+      "toPar": "+76",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -238,43 +158,91 @@
     }
   ],
   "season": {
-    "Tenbobnote": {
+    "Horusphoenix": {
       "points": 100,
       "eventsPlayed": 1,
       "wins": 1,
-      "acc": -6
-    },
-    "Colly45x": {
-      "points": 115,
-      "eventsPlayed": 1,
-      "wins": 0,
       "acc": -1
     },
-    "Er114ic": {
-      "points": 155,
-      "eventsPlayed": 1,
-      "wins": 0,
-      "acc": "E"
-    },
-    "Mr Longpole": {
-      "points": 70,
+    "Colly45x": {
+      "points": 90,
       "eventsPlayed": 1,
       "wins": 0,
       "acc": "+1"
     },
-    "x3offthetee": {
-      "points": 110,
+    "Mr Longpole": {
+      "points": 105,
       "eventsPlayed": 1,
       "wins": 0,
-      "acc": "+2"
+      "acc": "+3"
+    },
+    "Tenbobnote": {
+      "points": 95,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+8"
+    },
+    "Geordieboy85": {
+      "points": 60,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+17"
     },
     "NoWorries": {
       "points": 50,
       "eventsPlayed": 1,
       "wins": 0,
-      "acc": "+4"
+      "acc": "+33"
+    },
+    "Er114ic": {
+      "points": 100,
+      "eventsPlayed": 1,
+      "wins": 1,
+      "acc": "+1"
+    },
+    "X3offtheTee": {
+      "points": 115,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+5"
+    },
+    "Keep_of_Kalessin": {
+      "points": 80,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+6"
+    },
+    "Polekatt": {
+      "points": 95,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+28"
+    },
+    "IceCream": {
+      "points": 60,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+35"
+    },
+    "Rendallio": {
+      "points": 125,
+      "eventsPlayed": 1,
+      "wins": 1,
+      "acc": "+2"
+    },
+    "Hammers1man": {
+      "points": 115,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+12"
+    },
+    "BIGavoLEO": {
+      "points": 80,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+76"
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S6 W1: Roxburghe (9 Apr - 15 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Tenbobnote</td><td>-6</td><td>100</td></tr><tr><td>Colly45x</td><td>-1</td><td>115</td></tr><tr><td>Er114ic</td><td>E</td><td>155</td></tr><tr><td>Mr Longpole</td><td>+1</td><td>70</td></tr><tr><td>x3offthetee</td><td>+2</td><td>110</td></tr><tr><td>NoWorries</td><td>+4</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><th colspan=\"3\">Division 3</th></tr></table></div>",
+  "historyHtml": "<div class=\"history-item\"><strong>S6 W1: A Censored Golf Club (9 Apr - 15 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-1</td><td>100</td></tr><tr><td>Colly45x</td><td>+1</td><td>90</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>+8</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+17</td><td>60</td></tr><tr><td>NoWorries</td><td>+33</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>+1</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+5</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+6</td><td>80</td></tr><tr><td>Polekatt</td><td>+28</td><td>95</td></tr><tr><td>IceCream</td><td>+35</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>+2</td><td>125</td></tr><tr><td>Hammers1man</td><td>+12</td><td>115</td></tr><tr><td>BIGavoLEO</td><td>+76</td><td>80</td></tr></table></div>",
   "lastFinalizedWeek": 1
 }
