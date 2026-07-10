@@ -177,9 +177,24 @@
             document.getElementById('v-sw').innerText = `Season ${d.seasonNum} Week ${d.weekNum}`;
             document.getElementById('v-date').innerText = d.date;
 
-            // Leaderboards
-            [1,2,3].forEach(dv => {
+            // Generate active divisions array based on maxDivisions variable
+            const maxDivs = parseInt(d.maxDivisions) || 3;
+            let activeDivs = [];
+            for (let i = 1; i <= maxDivs; i++) {
+                activeDivs.push(i);
+            }
+
+            // Clear containers before adding elements dynamically
+            document.getElementById('div-tables').innerHTML = '';
+            document.getElementById('standings-area').innerHTML = '';
+
+            // Dynamic Leaderboards
+            activeDivs.forEach(dv => {
                 const players = d.players.filter(p => p.division == dv).sort((a,b) => parseToPar(a.toPar)-parseToPar(b.toPar));
+                
+                // Only show leaderboard card if there are players assigned to it
+                if (players.length === 0) return;
+
                 let h = `<h3>Division ${dv}</h3><div class="table-wrapper"><table><thead><tr>
                     <th class="col-pos">POS</th>
                     <th class="col-player">Player</th>
@@ -225,9 +240,12 @@
                 document.getElementById('div-tables').innerHTML += h + ((maxP.v > 0 || maxS.v > 0 || aces.length > 0 || albys.length > 0) ? hBar : '<div style="margin-bottom:10px;"></div>');
             });
 
-            // Standings with TIED logic (Total first, then ACC)
+            // Dynamic Standings with TIED logic (Total first, then ACC)
             const arch = d.season||{};
-            [1,2,3].forEach(dv => {
+            activeDivs.forEach(dv => {
+                let filteredPlayers = d.players.filter(p => p.division == dv);
+                if (filteredPlayers.length === 0) return;
+
                 let h = `<div class="st-card"><h4>DIVISION ${dv}</h4><div class="table-wrapper"><table><thead><tr>
                     <th class="col-pos">POS</th>
                     <th class="col-player">Player</th>
@@ -236,7 +254,7 @@
                     <th class="col-data">ACC</th>
                     <th class="col-pts">TOTAL</th>
                 </tr></thead><tbody>`;
-                let sp = d.players.filter(p => p.division == dv).map(p => ({
+                let sp = filteredPlayers.map(p => ({
                     name:p.name, 
                     console:p.console, 
                     total:arch[p.name]?.points||0, 
@@ -261,8 +279,9 @@
                 document.getElementById('standings-area').innerHTML += h + "</tbody></table></div></div>";
             });
 
-            // History
+            // History Tracker
             if(d.historyHtml) {
+                document.getElementById('history-area').innerHTML = '';
                 const tempDiv = document.createElement('div'); tempDiv.innerHTML = d.historyHtml;
                 tempDiv.querySelectorAll('.history-item').forEach(item => {
                     const title = item.querySelector('strong').innerText.replace(/S(\d+)\sW(\d+):/g, "S$1 W$2 •");
